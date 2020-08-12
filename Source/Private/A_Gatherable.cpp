@@ -2,17 +2,20 @@
 
 
 #include "A_Gatherable.h"
-#include "Components/CapsuleComponent.h" 	
 #include "Components/WidgetComponent.h"
 #include "A_PlayerCharacter.h"
 #include "InventoryComponent.h"
+#include "Components/SphereComponent.h"
 #include "Item.h"
+#include "GAS/Potions/Plant.h"
 
 // Sets default values
 AA_Gatherable::AA_Gatherable()
 {
-	Mesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
-	Mesh->SetupAttachment(RootComponent);
+	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
+	RootComponent = Mesh;
+	
+	Trigger->SetupAttachment(RootComponent);
 
 	UsesLeft = 1;
 }
@@ -20,9 +23,13 @@ AA_Gatherable::AA_Gatherable()
 // Called when the game starts or when spawned
 void AA_Gatherable::BeginPlay()
 {
-	Super::BeginPlay();
+	if(!Item)
+	{
+		Item = ItemClass.GetDefaultObject();
+		Item->InteractActionText = FText::FromString("Gather");
+	}
 
-	Item = ItemClass.GetDefaultObject();
+	Super::BeginPlay();
 }
 
 // Called every frame
@@ -45,4 +52,19 @@ void AA_Gatherable::Interact(AA_PlayerCharacter* InteractingPlayer)
 	{
 		Destroy();
 	}
+}
+
+void AA_Gatherable::OnItemDropped(UItem* DroppedItem)
+{
+	Item = DroppedItem;
+	ItemClass = Item->StaticClass();
+	Mesh->SetStaticMesh(Item->DroppedMesh);
+
+	if(UPlant* Plant = Cast<UPlant>(DroppedItem))
+	{
+		Mesh->SetMaterial(0, Plant->PlantMaterial);
+	}
+
+	Item->InteractActionText = FText::FromString("Gather");
+	OnItemDroppedBP(Item);
 }

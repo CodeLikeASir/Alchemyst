@@ -5,7 +5,6 @@
 #include "CoreMinimal.h"
 #include "Interactible.h"
 #include "Item.h"
-#include "GameFramework/Actor.h"
 #include "A_Gatherable.generated.h"
 
 UCLASS()
@@ -31,11 +30,17 @@ protected:
 	int32 UsesLeft;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Component")
-	class USkeletalMeshComponent* Mesh;
+	class UStaticMeshComponent* Mesh;
 
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	virtual void Interact(AA_PlayerCharacter* InteractingPlayer) override;
+
+	UFUNCTION(BlueprintCallable)
+	void OnItemDropped(UItem* DroppedItem);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnItemDroppedBP(UItem* DroppedItem);
 };

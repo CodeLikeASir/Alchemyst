@@ -22,6 +22,12 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	class UStaticMeshComponent* Mesh;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	AA_PlayerCharacter* CurrentPlayer;
+
 public:
 	virtual void Interact(AA_PlayerCharacter* InteractingPlayer) override;
+
+	UFUNCTION(BlueprintCallable)
+	class UPotion* OnCraftingCompleted(TArray<class UItem*> UsedItems);
 };

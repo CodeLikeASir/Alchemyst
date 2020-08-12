@@ -4,6 +4,10 @@
 #include "CraftingStation.h"
 #include "Components/StaticMeshComponent.h"
 #include "Components/BoxComponent.h"
+#include "GAS/Potions/Potion.h"
+#include "GAS/Potions/Plant.h"
+#include "A_PlayerCharacter.h"
+#include "InventoryComponent.h"
 
 // Sets default values
 ACraftingStation::ACraftingStation()
@@ -21,5 +25,23 @@ void ACraftingStation::BeginPlay()
 
 void ACraftingStation::Interact(AA_PlayerCharacter* InteractingPlayer)
 {
+	CurrentPlayer = InteractingPlayer;
+	
 	Super::Interact(InteractingPlayer);
+}
+
+UPotion* ACraftingStation::OnCraftingCompleted(TArray<UItem*> UsedItems)
+{
+	FTasteStruct CraftedTaste = FTasteStruct();
+
+	for (UItem* Item : UsedItems)
+	{
+		if(UPlant* Plant = Cast<UPlant>(Item))
+			CraftedTaste += Plant->Taste;
+	}
+
+	UPotion* CraftedPotion = NewObject<UPotion>();
+	CraftedPotion->Taste = CraftedTaste;
+
+	return CraftedPotion;
 }

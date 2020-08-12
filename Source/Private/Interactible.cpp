@@ -16,6 +16,7 @@ AInteractible::AInteractible()
 	InteractUI = CreateDefaultSubobject<UWidgetComponent>(TEXT("InteractUI"));
 	InteractUI->SetupAttachment(Trigger);
 	InteractUI->SetDrawSize(FVector2D(200, 100));
+	InteractUI->SetWidgetSpace(EWidgetSpace::Screen);
 	InteractUI->SetVisibility(false);
 }
 
