@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "Abilities/GameplayAbility.h"
 #include "Components/SphereComponent.h"
+#include "GAS/AlchGameplayAbility.h"
+
 
 #include "GA_Potion_Throw.generated.h"
 
@@ -12,7 +14,7 @@
  * 
  */
 UCLASS()
-class ALCHEMYST_API UGA_Potion_Throw : public UGameplayAbility
+class ALCHEMYST_API UGA_Potion_Throw : public UAlchGameplayAbility
 {
 	GENERATED_BODY()
 
@@ -29,6 +31,9 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion")
 	class UNiagaraSystem* ExplosionFX;
 
+public:
+	UGA_Potion_Throw();
+	
 	virtual void ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* OwnerInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData) override;
 
 	virtual void InputReleased(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo) override;

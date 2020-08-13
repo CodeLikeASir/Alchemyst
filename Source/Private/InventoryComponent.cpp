@@ -2,7 +2,11 @@
 
 
 #include "InventoryComponent.h"
+#include "A_PlayerCharacter.h"
 #include "Item.h"
+#include "GAS/Potions/Potion.h"
+#include "GAS/Potions/GA_Potion_Throw.h"
+#include "AbilitySystemComponent.h"
 
 // Sets default values for this component's properties
 UInventoryComponent::UInventoryComponent()
@@ -20,6 +24,11 @@ void UInventoryComponent::BeginPlay()
 	{
 		AddItem(Item);
 	}
+	
+	if(AA_PlayerCharacter* PlayerCharacter = Cast<AA_PlayerCharacter>(GetOwner()))
+	{
+		OwningPlayer = PlayerCharacter;
+	}
 }
 
 bool UInventoryComponent::AddItem(UItem* Item)
@@ -32,6 +41,16 @@ bool UInventoryComponent::AddItem(UItem* Item)
 	Item->OwningInventory = this;
 	Item->World = GetWorld();
 	Items.Add(Item);
+
+	if(UPotion* Potion = Cast<UPotion>(Item))
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Collectd a potion")));
+		if(Potion->ThrowAbility)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("It seems magical")));
+			OwningPlayer->GrantAbility(Potion->ThrowAbility);
+		}
+	}
 
 	// Update UI
 	OnInventoryUpdated.Broadcast();
@@ -47,6 +66,12 @@ bool UInventoryComponent::RemoveItem(UItem* Item)
 		Item->World = nullptr;
 		Items.RemoveSingle(Item);
 		OnInventoryUpdated.Broadcast();
+
+		if(OwningPlayer->EquippedItem == Item)
+		{
+			OwningPlayer->EquippedItem = nullptr;
+		}
+		
 		return true;
 	}
 

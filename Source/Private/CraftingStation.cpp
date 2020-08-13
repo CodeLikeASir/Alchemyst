@@ -8,6 +8,7 @@
 #include "GAS/Potions/Plant.h"
 #include "A_PlayerCharacter.h"
 #include "InventoryComponent.h"
+#include "GAS/Potions/GA_Potion_Throw.h"
 
 // Sets default values
 ACraftingStation::ACraftingStation()
@@ -37,11 +38,19 @@ UPotion* ACraftingStation::OnCraftingCompleted(TArray<UItem*> UsedItems)
 	for (UItem* Item : UsedItems)
 	{
 		if(UPlant* Plant = Cast<UPlant>(Item))
+		{
 			CraftedTaste += Plant->Taste;
+		}
 	}
 
 	UPotion* CraftedPotion = NewObject<UPotion>();
 	CraftedPotion->Taste = CraftedTaste;
+	
+	if(UPlant* Plant = Cast<UPlant>(UsedItems[0]))
+		CraftedPotion->SetLiquidColor(Plant->LiquidColor);
+
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Giving potion an ability")));
+	CraftedPotion->ThrowAbility = UGA_Potion_Throw::StaticClass();
 
 	return CraftedPotion;
 }

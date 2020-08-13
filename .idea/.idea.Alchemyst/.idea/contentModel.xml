@@ -35,6 +35,7 @@
           <e p="CraftingStation.cpp" t="Include" />
           <e p="FoodItem.cpp" t="Include" />
           <e p="GAS" t="Include">
+            <e p="AlchGameplayAbility.cpp" t="Include" />
             <e p="Potions" t="Include">
               <e p="GA_Potion_Throw.cpp" t="Include" />
               <e p="Plant.cpp" t="Include" />
@@ -56,6 +57,7 @@
           <e p="CraftingStation.h" t="Include" />
           <e p="FoodItem.h" t="Include" />
           <e p="GAS" t="Include">
+            <e p="AlchGameplayAbility.h" t="Include" />
             <e p="Potions" t="Include">
               <e p="GA_Potion_Throw.h" t="Include" />
               <e p="Plant.h" t="Include" />

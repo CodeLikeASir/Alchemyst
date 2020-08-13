@@ -64,6 +64,12 @@ void AA_Gatherable::OnItemDropped(UItem* DroppedItem)
 	{
 		Mesh->SetMaterial(0, Plant->PlantMaterial);
 	}
+	else if(UPotion* Potion = Cast<UPotion>(DroppedItem))
+	{
+		UMaterialInstanceDynamic* MI = UMaterialInstanceDynamic::Create(Mesh->GetMaterial(2), this);
+		Mesh->SetMaterial(0, MI);
+        MI->SetVectorParameterValue(TEXT("LiquidColor"), Potion->GetLiquidColor());
+	}
 
 	Item->InteractActionText = FText::FromString("Gather");
 	OnItemDroppedBP(Item);

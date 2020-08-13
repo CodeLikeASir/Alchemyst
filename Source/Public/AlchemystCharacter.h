@@ -4,7 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "GAS/AlchGameplayAbility.h"
 #include "AlchemystCharacter.generated.h"
+
+#define CastToInt( val ) ( static_cast<uint8>(val) )
 
 UCLASS(Blueprintable)
 class AAlchemystCharacter : public ACharacter
@@ -36,5 +39,27 @@ private:
 	/** A decal that projects to the cursor location. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UDecalComponent* CursorToWorld;
+
+public:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category= "GAS")
+	class UAbilitySystemComponent* AbilitySystemComponent;
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "GAS")
+	TArray<TSubclassOf<class UAlchGameplayAbility>> CharacterAbilities;
+
+	void AddCharacterAbilities();
+
+	void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
+
+	UAbilitySystemComponent* GetAbilitySystemComponent() const
+	{
+		return AbilitySystemComponent;
+	}
+
+	virtual void PossessedBy(AController* NewController) override;
+
+	void SetupInput(class UInputComponent* PlayerInputComponent);
+
+	void GrantAbility(TSubclassOf<class UAlchGameplayAbility> Ability);
 };
 

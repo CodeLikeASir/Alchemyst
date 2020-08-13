@@ -23,6 +23,11 @@ AA_PlayerCharacter::AA_PlayerCharacter()
     Health = 100.f;
 }
 
+void AA_PlayerCharacter::SetEquippedItem(UItem* NewEquippedItem)
+{
+    EquippedItem = NewEquippedItem;
+}
+
 void AA_PlayerCharacter::MoveUp(float Value)
 {
     AddMovementInput(UKismetMathLibrary::GetForwardVector(FRotator(0, GetControlRotation().Yaw, 0)), Value);

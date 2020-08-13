@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Item.h"
+#include "Engine/DataTable.h"
 #include "UObject/NoExportTypes.h"
 #include "Potion.generated.h"
 
@@ -48,18 +49,51 @@ struct FTasteStruct
 	}
 };
 
+USTRUCT(BlueprintType)
+struct FPotionColorRow : public FTableRowBase
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	FLinearColor ColorValue;
+};
+
+UENUM(BlueprintType)
+enum EPotionColors
+{
+	Green, Red, Blue, Grey, Purple
+};
+
 UCLASS(BlueprintType)
 class ALCHEMYST_API UPotion : public UItem
 {
 	GENERATED_BODY()
 
+	UPROPERTY()
+	UDataTable* Colors;
+	
+protected:
+	UPotion();
+	
+	UPROPERTY(EditAnywhere, Category= "Potion")
+	TEnumAsByte<EPotionColors> LiquidColor;
+	
 public:
+	UFUNCTION(BlueprintCallable)
+	FLinearColor GetLiquidColor();
+	
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category= "Potion")
 	FTasteStruct Taste;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Ability")
+	TSubclassOf<class UAlchGameplayAbility> ThrowAbility;
 	
 	UFUNCTION(BlueprintCallable)
 	void CalculateEffect();
 
 	UFUNCTION(BlueprintCallable)
 	void InitWithOtherPotion(UPotion* OtherPotion);
+
+	UFUNCTION(BlueprintCallable)
+	void SetLiquidColor(TEnumAsByte<EPotionColors> NewColor);
 };

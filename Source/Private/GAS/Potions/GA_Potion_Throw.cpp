@@ -3,11 +3,18 @@
 
 #include "GAS/Potions/GA_Potion_Throw.h"
 
+UGA_Potion_Throw::UGA_Potion_Throw()
+{
+    AbilityInputID = EGDAbilityInputID::Throw;
+}
+
 void UGA_Potion_Throw::ActivateAbility(const FGameplayAbilitySpecHandle Handle,
-    const FGameplayAbilityActorInfo* OwnerInfo, const FGameplayAbilityActivationInfo ActivationInfo,
-    const FGameplayEventData* TriggerEventData)
+                                       const FGameplayAbilityActorInfo* OwnerInfo, const FGameplayAbilityActivationInfo ActivationInfo,
+                                       const FGameplayEventData* TriggerEventData)
 {
     Super::ActivateAbility(Handle, OwnerInfo, ActivationInfo, TriggerEventData);
+
+    GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("YEET")));
 }
 
 void UGA_Potion_Throw::InputReleased(const FGameplayAbilitySpecHandle Handle,

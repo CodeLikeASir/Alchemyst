@@ -22,4 +22,7 @@ public:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Plant")
 	UMaterialInterface* PlantMaterial;
+
+	UPROPERTY(EditAnywhere, Category= "Potion")
+	TEnumAsByte<EPotionColors> LiquidColor;
 };

@@ -24,6 +24,12 @@ class ALCHEMYST_API AA_PlayerCharacter : public AAlchemystCharacter
     public:
 	AA_PlayerCharacter();
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category= "Player")
+	class UItem* EquippedItem;
+
+	UFUNCTION(BlueprintCallable)
+	void SetEquippedItem(UItem* NewEquippedItem);
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Component")
 	class UInventoryComponent* Inventory;
 	

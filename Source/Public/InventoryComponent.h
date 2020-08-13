@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "A_PlayerCharacter.h"
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "InventoryComponent.generated.h"
@@ -26,6 +27,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	bool RemoveItem(class UItem* Item);
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	AA_PlayerCharacter* OwningPlayer;
 
 	UPROPERTY(EditDefaultsOnly, Instanced)
 	TArray<class UItem*> DefaultItems;

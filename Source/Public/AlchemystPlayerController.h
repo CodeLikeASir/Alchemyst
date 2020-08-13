@@ -41,6 +41,8 @@ protected:
 	void MoveRight(float Value);
 
 	void OnClicked();
+
+	virtual void AcknowledgePossession(APawn* P) override;
 };
 
 

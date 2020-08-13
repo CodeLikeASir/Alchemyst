@@ -5,9 +5,11 @@
 #include "Runtime/Engine/Classes/Components/DecalComponent.h"
 #include "HeadMountedDisplayFunctionLibrary.h"
 #include "AlchemystCharacter.h"
+#include "Alchemyst.h"
 #include "A_PlayerCharacter.h"
 #include "Engine/CollisionProfile.h"
 #include "Engine/World.h"
+#include "AbilitySystemComponent.h"
 
 AAlchemystPlayerController::AAlchemystPlayerController()
 {
@@ -43,6 +45,13 @@ void AAlchemystPlayerController::SetupInputComponent()
 
 	InputComponent->BindAxis("MoveUp", this, &AAlchemystPlayerController::MoveUp);
 	InputComponent->BindAxis("MoveRight", this, &AAlchemystPlayerController::MoveRight);
+
+	UAbilitySystemComponent* AbilitySystem = MyCharacter->GetAbilitySystemComponent();
+	if(AbilitySystem)
+	{
+		//AbilitySystem->BindAbilityActivationToInputComponent(InputComponent, FGameplayAbilityInputBinds("ConfirmInput", "CancelInput", "AbilityInput"));
+	}
+	//MyCharacter->SetupInput(InputComponent);
 }
 
 void AAlchemystPlayerController::MoveToMouseCursor()
@@ -129,5 +138,16 @@ void AAlchemystPlayerController::OnClicked()
 				HitObject->Interact(MyCharacter);
 			}
 		}
+	}
+}
+
+void AAlchemystPlayerController::AcknowledgePossession(APawn* P)
+{
+	Super::AcknowledgePossession(P);
+
+	AAlchemystCharacter* CharacterBase = Cast<AAlchemystCharacter>(P);
+	if (CharacterBase)
+	{
+		CharacterBase->GetAbilitySystemComponent()->InitAbilityActorInfo(CharacterBase, CharacterBase);
 	}
 }

@@ -11,6 +11,12 @@
 #include "HeadMountedDisplayFunctionLibrary.h"
 #include "Materials/Material.h"
 #include "Engine/World.h"
+#include "AbilitySystemComponent.h"
+#include "Alchemyst.h"
+#include "GameplayAbilitySpec.h"
+#include "GAS/Potions/GA_Potion_Throw.h"
+#include "Abilities/GameplayAbilityTypes.h"
+#include "GameplayAbilitySpec.h"
 
 AAlchemystCharacter::AAlchemystCharacter()
 {
@@ -55,6 +61,8 @@ AAlchemystCharacter::AAlchemystCharacter()
 	// Activate ticking in order to update the cursor every frame.
 	PrimaryActorTick.bCanEverTick = true;
 	PrimaryActorTick.bStartWithTickEnabled = true;
+
+	AbilitySystemComponent = CreateDefaultSubobject<UAbilitySystemComponent>(TEXT("AbilitySystem"));
 }
 
 void AAlchemystCharacter::Tick(float DeltaSeconds)
@@ -87,4 +95,72 @@ void AAlchemystCharacter::Tick(float DeltaSeconds)
 			CursorToWorld->SetWorldRotation(CursorR);
 		}
 	}
+}
+
+void AAlchemystCharacter::AddCharacterAbilities()
+{
+	// Grant abilities, but only on the server	
+	if (GetLocalRole() != ROLE_Authority || !IsValid(AbilitySystemComponent))
+	{
+		return;
+	}
+
+	for (TSubclassOf<UAlchGameplayAbility>& StartupAbility : CharacterAbilities)
+	{
+		//GetAbilityLevel(StartupAbility.GetDefaultObject()->AbilityID)
+		AbilitySystemComponent->GiveAbility(
+            FGameplayAbilitySpec(StartupAbility, 1, static_cast<int32>(EGDAbilityInputID::Test), this));
+	}
+
+	//AbilitySystemComponent->bCharacterAbilitiesGiven = true;
+}
+
+void AAlchemystCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+{
+	// set up gameplay key bindings
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
+	
+	UAbilitySystemComponent* AbilitySystem = GetAbilitySystemComponent();
+	if(AbilitySystem)
+	{
+		AbilitySystem->BindAbilityActivationToInputComponent(InputComponent, FGameplayAbilityInputBinds("ConfirmInput", "CancelInput", "EGDAbilityInputID"));
+		AddCharacterAbilities();
+	}
+	//MyCharacter->SetupInput(InputComponent);
+}
+
+void AAlchemystCharacter::PossessedBy(AController* NewController)
+{
+	Super::PossessedBy(NewController);
+
+	if (AbilitySystemComponent)
+	{
+		AbilitySystemComponent->InitAbilityActorInfo(this, this);
+	}
+
+	// ASC MixedMode replication requires that the ASC Owner's Owner be the Controller.
+	SetOwner(NewController);
+}
+
+void AAlchemystCharacter::SetupInput(UInputComponent* PlayerInputComponent)
+{
+	// Bind to AbilitySystemComponent
+	//AbilitySystemComponent->BindAbilityActivationToInputComponent(PlayerInputComponent, FGameplayAbilityInputBinds(
+	//	FString("ConfirmTarget"), FString("CancelTarget"), FString("EGDAbilityInputID"),
+	//	static_cast<int32>(EGDAbilityInputID::Confirm), static_cast<int32>(EGDAbilityInputID::Cancel)));
+}
+
+void AAlchemystCharacter::GrantAbility(TSubclassOf<class UAlchGameplayAbility> Ability)
+{
+	// Grant abilities, but only on the server	
+	if (GetLocalRole() != ROLE_Authority || !IsValid(AbilitySystemComponent))
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Not cool enough")));
+		return;
+	}
+
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Player learns to %s"), *Ability->GetName()));
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Use it with %s"), *UEnum::GetValueAsString(Ability.GetDefaultObject()->AbilityInputID)));
+	AbilitySystemComponent->GiveAbility(
+            FGameplayAbilitySpec(Ability, 1, static_cast<int32>(Ability.GetDefaultObject()->AbilityInputID), this));
 }
