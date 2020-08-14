@@ -26,7 +26,7 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Potion")
 	class UProjectileMovementComponent* ProjectileMovement;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Potion")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Potion")
 	class UNiagaraSystem* HitFX;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Potion")
@@ -34,9 +34,12 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion")
 	class UPotion* ThrownPotion;
+	
+	UFUNCTION()
+    void OnCompHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
 
 public:
 	UFUNCTION(BlueprintCallable)
-	void InitThrownPotion(UPotion* Potion, class UStaticMesh* PotionMesh, float HitRadius, UNiagaraSystem* PotionHitFX);
+	void InitThrownPotion(UPotion* Potion);
 
 };

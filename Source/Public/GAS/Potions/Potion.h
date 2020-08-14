@@ -64,6 +64,12 @@ enum EPotionColors
 	Green, Red, Blue, Grey, Purple
 };
 
+UENUM(BlueprintType)
+enum EPotionAbilities
+{
+	Throw_Explosive
+};
+
 UCLASS(BlueprintType)
 class ALCHEMYST_API UPotion : public UItem
 {
@@ -85,8 +91,11 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category= "Potion")
 	FTasteStruct Taste;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Ability")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category= "Ability")
 	TSubclassOf<class UAlchGameplayAbility> ThrowAbility;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Ability")
+	TEnumAsByte<EPotionAbilities> ThrowAbilityIndex;
 	
 	UFUNCTION(BlueprintCallable)
 	void CalculateEffect();

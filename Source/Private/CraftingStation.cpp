@@ -49,8 +49,7 @@ UPotion* ACraftingStation::OnCraftingCompleted(TArray<UItem*> UsedItems)
 	if(UPlant* Plant = Cast<UPlant>(UsedItems[0]))
 		CraftedPotion->SetLiquidColor(Plant->LiquidColor);
 
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Giving potion an ability")));
-	CraftedPotion->ThrowAbility = UGA_Potion_Throw::StaticClass();
+	CraftedPotion->ThrowAbility = PotionAbilities[CraftedPotion->ThrowAbilityIndex];
 
 	return CraftedPotion;
 }

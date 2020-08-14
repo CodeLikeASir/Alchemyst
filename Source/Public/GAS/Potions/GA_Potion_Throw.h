@@ -4,10 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Abilities/GameplayAbility.h"
-#include "Components/SphereComponent.h"
 #include "GAS/AlchGameplayAbility.h"
-
-
 #include "GA_Potion_Throw.generated.h"
 
 /**
@@ -20,7 +17,7 @@ class ALCHEMYST_API UGA_Potion_Throw : public UAlchGameplayAbility
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion")
-	UStaticMesh* Mesh;
+	class TSubclassOf<class APotion_ThrownActor> ThrownPotionClass;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion")
 	class UPotion* Potion;
@@ -31,6 +28,9 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion")
 	class UNiagaraSystem* ExplosionFX;
 
+	class AAlchemystPlayerController* OwningPlayerController;
+	class AA_PlayerCharacter* OwningPlayerCharacter;
+
 public:
 	UGA_Potion_Throw();
 	
@@ -39,4 +39,7 @@ public:
 	virtual void InputReleased(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo) override;
 
 	virtual void CancelAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, bool bReplicateCancelAbility) override;
+
+protected:
+	void SpawnPotionProjectile();
 };

@@ -20,6 +20,9 @@ AA_PlayerCharacter::AA_PlayerCharacter()
     Inventory = CreateDefaultSubobject<UInventoryComponent>(TEXT("Inventory"));
     Inventory->Capacity = 20;
 
+    ThrowPosition  = CreateDefaultSubobject<USphereComponent>(TEXT("ThrowPosition"));
+    ThrowPosition->SetupAttachment(RootComponent);
+
     Health = 100.f;
 }
 
@@ -59,6 +62,11 @@ void AA_PlayerCharacter::OnEndInteractableOverlap(UPrimitiveComponent* Overlappe
 bool AA_PlayerCharacter::IsInRange(AInteractible* HitObject)
 {
     return ObjectsInRange.Contains(HitObject);
+}
+
+FVector AA_PlayerCharacter::GetThrowPos()
+{
+    return ThrowPosition->GetComponentLocation();
 }
 
 void AA_PlayerCharacter::UseItem(UItem* Item)

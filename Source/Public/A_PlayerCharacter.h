@@ -19,6 +19,9 @@ class ALCHEMYST_API AA_PlayerCharacter : public AAlchemystCharacter
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Component")
 	class USphereComponent* InteractableCollision;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Component")
+	class USceneComponent* ThrowPosition;
+
 	TArray<class AInteractible*> ObjectsInRange;
 
     public:
@@ -43,6 +46,8 @@ class ALCHEMYST_API AA_PlayerCharacter : public AAlchemystCharacter
     void OnEndInteractableOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 
 	bool IsInRange(AInteractible* HitObject);
+
+	FVector GetThrowPos();
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category= "Health")
 	float Health;

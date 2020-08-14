@@ -22,6 +22,14 @@ void AAlchemystPlayerController::BeginPlay()
 	MyCharacter = Cast<AA_PlayerCharacter>(GetPawn());
 }
 
+FVector AAlchemystPlayerController::GetCursorHitPos()
+{
+	FHitResult HitResult;
+	GetHitResultUnderCursor(ECC_Visibility, false, HitResult);
+
+	return HitResult.ImpactPoint;
+}
+
 void AAlchemystPlayerController::PlayerTick(float DeltaTime)
 {
 	Super::PlayerTick(DeltaTime);

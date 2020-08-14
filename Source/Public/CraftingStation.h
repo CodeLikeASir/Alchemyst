@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Interactible.h"
 #include "Blueprint/UserWidget.h"
+
 #include "CraftingStation.generated.h"
 
 UCLASS()
@@ -30,4 +31,7 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	class UPotion* OnCraftingCompleted(TArray<class UItem*> UsedItems);
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TArray<TSubclassOf<class UGA_Potion_Throw>> PotionAbilities;
 };

@@ -12,6 +12,8 @@ UPotion::UPotion()
     {
         Colors = PotionColorsDataObject.Object;
     }
+
+    ThrowAbilityIndex = EPotionAbilities::Throw_Explosive;
 }
 
 FLinearColor UPotion::GetLiquidColor()

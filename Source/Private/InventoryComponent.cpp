@@ -44,10 +44,8 @@ bool UInventoryComponent::AddItem(UItem* Item)
 
 	if(UPotion* Potion = Cast<UPotion>(Item))
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Collectd a potion")));
 		if(Potion->ThrowAbility)
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("It seems magical")));
 			OwningPlayer->GrantAbility(Potion->ThrowAbility);
 		}
 	}
