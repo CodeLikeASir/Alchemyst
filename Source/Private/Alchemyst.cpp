@@ -3,7 +3,6 @@
 #include "Alchemyst.h"
 #include "Modules/ModuleManager.h"
 
-IMPLEMENT_PRIMARY_GAME_MODULE( FDefaultGameModuleImpl, Alchemyst, "Alchemyst" );
+IMPLEMENT_PRIMARY_GAME_MODULE(FDefaultGameModuleImpl, Alchemyst, "Alchemyst");
 
 DEFINE_LOG_CATEGORY(LogAlchemyst)
- 

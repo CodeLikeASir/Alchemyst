@@ -11,40 +11,38 @@
 UCLASS()
 class AAlchemystPlayerController : public APlayerController
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	AAlchemystPlayerController();
-	virtual void BeginPlay() override;
+    AAlchemystPlayerController();
+    virtual void BeginPlay() override;
 
-	FVector GetCursorHitPos();
+    FVector GetCursorHitPos();
 
 protected:
-	/** True if the controlled character should navigate to the mouse cursor. */
-	uint32 bMoveToMouseCursor : 1;
-	class AA_PlayerCharacter* MyCharacter;
+    /** True if the controlled character should navigate to the mouse cursor. */
+    uint32 bMoveToMouseCursor : 1;
+    class AA_PlayerCharacter* MyCharacter;
 
-	// Begin PlayerController interface
-	virtual void PlayerTick(float DeltaTime) override;
-	virtual void SetupInputComponent() override;
-	// End PlayerController interface
+    // Begin PlayerController interface
+    virtual void PlayerTick(float DeltaTime) override;
+    virtual void SetupInputComponent() override;
+    // End PlayerController interface
 
-	/** Navigate player to the current mouse cursor location. */
-	void MoveToMouseCursor();
-	
-	/** Navigate player to the given world location. */
-	void SetNewMoveDestination(const FVector DestLocation);
+    /** Navigate player to the current mouse cursor location. */
+    void MoveToMouseCursor();
 
-	/** Input handlers for SetDestination action. */
-	void OnSetDestinationPressed();
-	void OnSetDestinationReleased();
+    /** Navigate player to the given world location. */
+    void SetNewMoveDestination(FVector DestLocation);
 
-	void MoveUp(float Value);
-	void MoveRight(float Value);
+    /** Input handlers for SetDestination action. */
+    void OnSetDestinationPressed();
+    void OnSetDestinationReleased();
 
-	void OnClicked();
+    void MoveUp(float Value);
+    void MoveRight(float Value);
 
-	virtual void AcknowledgePossession(APawn* P) override;
+    void OnClicked();
+
+    virtual void AcknowledgePossession(APawn* P) override;
 };
-
-

@@ -12,7 +12,7 @@
 UCLASS()
 class ALCHEMYST_API UFoodItem : public UItem
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
     UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category= "Item", meta = (ClampMin = 0.0))

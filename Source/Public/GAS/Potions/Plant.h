@@ -14,15 +14,15 @@
 UCLASS()
 class ALCHEMYST_API UPlant : public UItem
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category= "Potion")
-	FTasteStruct Taste;
-	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Plant")
-	UMaterialInterface* PlantMaterial;
+    UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category= "Potion")
+    FTasteStruct Taste;
 
-	UPROPERTY(EditAnywhere, Category= "Potion")
-	TEnumAsByte<EPotionColors> LiquidColor;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Plant")
+    UMaterialInterface* PlantMaterial;
+
+    UPROPERTY(EditAnywhere, Category= "Potion")
+    TEnumAsByte<EPotionColors> LiquidColor;
 };

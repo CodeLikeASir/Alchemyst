@@ -11,98 +11,102 @@
 USTRUCT(BlueprintType)
 struct FTasteStruct
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion/Taste")
-	float Sweetness;
-	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion/Taste")
-	float Sourness;
-	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion/Taste")
-	float Saltiness;
-	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion/Taste")
-	float Bitterness;
-	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion/Taste")
-	float Spiciness;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion/Taste")
+    float Sweetness;
 
-	FTasteStruct()
-	{
-		Sweetness = 0.f;
-		Sourness = 0.f;
-		Saltiness = 0.f;
-		Bitterness = 0.f;
-		Spiciness = 0.f;
-	}
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion/Taste")
+    float Sourness;
 
-	FTasteStruct& operator+=(FTasteStruct& OtherTaste)
-	{
-		Sweetness += OtherTaste.Sweetness;
-		Sourness += OtherTaste.Sourness;
-		Saltiness += OtherTaste.Saltiness;
-		Bitterness += OtherTaste.Bitterness;
-		Spiciness += OtherTaste.Spiciness;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion/Taste")
+    float Saltiness;
 
-		return *this;
-	}
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion/Taste")
+    float Bitterness;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion/Taste")
+    float Spiciness;
+
+    FTasteStruct()
+    {
+        Sweetness = 0.f;
+        Sourness = 0.f;
+        Saltiness = 0.f;
+        Bitterness = 0.f;
+        Spiciness = 0.f;
+    }
+
+    FTasteStruct& operator+=(FTasteStruct& OtherTaste)
+    {
+        Sweetness += OtherTaste.Sweetness;
+        Sourness += OtherTaste.Sourness;
+        Saltiness += OtherTaste.Saltiness;
+        Bitterness += OtherTaste.Bitterness;
+        Spiciness += OtherTaste.Spiciness;
+
+        return *this;
+    }
 };
 
 USTRUCT(BlueprintType)
 struct FPotionColorRow : public FTableRowBase
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	FLinearColor ColorValue;
+    UPROPERTY(EditAnywhere, BlueprintReadOnly)
+    FLinearColor ColorValue;
 };
 
 UENUM(BlueprintType)
 enum EPotionColors
 {
-	Green, Red, Blue, Grey, Purple
+    Green,
+    Red,
+    Blue,
+    Grey,
+    Purple
 };
 
 UENUM(BlueprintType)
 enum EPotionAbilities
 {
-	Throw_Explosive
+    Throw_Explosive
 };
 
 UCLASS(BlueprintType)
 class ALCHEMYST_API UPotion : public UItem
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
-	UPROPERTY()
-	UDataTable* Colors;
-	
+    UPROPERTY()
+    UDataTable* Colors;
+
 protected:
-	UPotion();
-	
-	UPROPERTY(EditAnywhere, Category= "Potion")
-	TEnumAsByte<EPotionColors> LiquidColor;
-	
+    UPotion();
+
+    UPROPERTY(EditAnywhere, Category= "Potion")
+    TEnumAsByte<EPotionColors> LiquidColor;
+
 public:
-	UFUNCTION(BlueprintCallable)
-	FLinearColor GetLiquidColor();
-	
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category= "Potion")
-	FTasteStruct Taste;
+    UFUNCTION(BlueprintCallable)
+    FLinearColor GetLiquidColor();
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category= "Ability")
-	TSubclassOf<class UAlchGameplayAbility> ThrowAbility;
+    UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category= "Potion")
+    FTasteStruct Taste;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Ability")
-	TEnumAsByte<EPotionAbilities> ThrowAbilityIndex;
-	
-	UFUNCTION(BlueprintCallable)
-	void CalculateEffect();
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category= "Ability")
+    TSubclassOf<class UAlchGameplayAbility> ThrowAbility;
 
-	UFUNCTION(BlueprintCallable)
-	void InitWithOtherPotion(UPotion* OtherPotion);
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Ability")
+    TEnumAsByte<EPotionAbilities> ThrowAbilityIndex;
 
-	UFUNCTION(BlueprintCallable)
-	void SetLiquidColor(TEnumAsByte<EPotionColors> NewColor);
+    UFUNCTION(BlueprintCallable)
+    void CalculateEffect();
+
+    UFUNCTION(BlueprintCallable)
+    void InitWithOtherPotion(UPotion* OtherPotion);
+
+    UFUNCTION(BlueprintCallable)
+    void SetLiquidColor(TEnumAsByte<EPotionColors> NewColor);
 };

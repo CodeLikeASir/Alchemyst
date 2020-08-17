@@ -10,37 +10,37 @@
 UCLASS()
 class ALCHEMYST_API AA_Gatherable : public AInteractible
 {
-	GENERATED_BODY()
-	
-public:	
-	// Sets default values for this actor's properties
-	AA_Gatherable();
+    GENERATED_BODY()
+
+public:
+    // Sets default values for this actor's properties
+    AA_Gatherable();
 
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Item")
-	TSubclassOf<UItem> ItemClass;
+    // Called when the game starts or when spawned
+    virtual void BeginPlay() override;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category= "Item")
-	UItem* Item;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Item")
+    TSubclassOf<UItem> ItemClass;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
-	int32 UsesLeft;
-	
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Component")
-	class UStaticMeshComponent* Mesh;
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category= "Item")
+    UItem* Item;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
+    int32 UsesLeft;
 
-	virtual void Interact(AA_PlayerCharacter* InteractingPlayer) override;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Component")
+    class UStaticMeshComponent* Mesh;
 
-	UFUNCTION(BlueprintCallable)
-	void OnItemDropped(UItem* DroppedItem);
+public:
+    // Called every frame
+    virtual void Tick(float DeltaTime) override;
 
-	UFUNCTION(BlueprintImplementableEvent)
-	void OnItemDroppedBP(UItem* DroppedItem);
+    virtual void Interact(AA_PlayerCharacter* InteractingPlayer) override;
+
+    UFUNCTION(BlueprintCallable)
+    void OnItemDropped(UItem* DroppedItem);
+
+    UFUNCTION(BlueprintImplementableEvent)
+    void OnItemDroppedBP(UItem* DroppedItem);
 };

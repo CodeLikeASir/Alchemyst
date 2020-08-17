@@ -7,13 +7,14 @@
 
 AAlchemystGameMode::AAlchemystGameMode()
 {
-	// use our custom PlayerController class
-	PlayerControllerClass = AAlchemystPlayerController::StaticClass();
+    // use our custom PlayerController class
+    PlayerControllerClass = AAlchemystPlayerController::StaticClass();
 
-	// set default pawn class to our Blueprinted character
-	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnBPClass(TEXT("/Game/TopDownCPP/Blueprints/TopDownCharacter"));
-	if (PlayerPawnBPClass.Class != NULL)
-	{
-		DefaultPawnClass = PlayerPawnBPClass.Class;
-	}
+    // set default pawn class to our Blueprinted character
+    static ConstructorHelpers::FClassFinder<APawn> PlayerPawnBPClass(
+        TEXT("/Game/TopDownCPP/Blueprints/TopDownCharacter"));
+    if (PlayerPawnBPClass.Class != nullptr)
+    {
+        DefaultPawnClass = PlayerPawnBPClass.Class;
+    }
 }

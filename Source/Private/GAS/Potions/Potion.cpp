@@ -7,13 +7,14 @@
 
 UPotion::UPotion()
 {
-    static ConstructorHelpers::FObjectFinder<UDataTable> PotionColorsDataObject(TEXT("DataTable'/Game/DataTable/PotionColorTable.PotionColorTable'"));
-    if(PotionColorsDataObject.Succeeded())
+    static ConstructorHelpers::FObjectFinder<UDataTable> PotionColorsDataObject(
+        TEXT("DataTable'/Game/DataTable/PotionColorTable.PotionColorTable'"));
+    if (PotionColorsDataObject.Succeeded())
     {
         Colors = PotionColorsDataObject.Object;
     }
 
-    ThrowAbilityIndex = EPotionAbilities::Throw_Explosive;
+    ThrowAbilityIndex = Throw_Explosive;
 }
 
 FLinearColor UPotion::GetLiquidColor()

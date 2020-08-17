@@ -12,7 +12,7 @@
 UCLASS(Abstract, BlueprintType, Blueprintable, EditInlineNew, DefaultToInstanced)
 class ALCHEMYST_API UItem : public UObject
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
     UItem();
@@ -27,7 +27,7 @@ public:
 
     UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category= "Item")
     FText InteractActionText;
-    
+
     UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category= "Item")
     class UStaticMesh* DroppedMesh;
 

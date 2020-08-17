@@ -8,11 +8,11 @@
 
 void UFoodItem::Use(AA_PlayerCharacter* Character)
 {
-    if(Character)
+    if (Character)
     {
         Character->Health += HealthToHeal;
 
-        if(OwningInventory)
+        if (OwningInventory)
         {
             OwningInventory->RemoveItem(this);
         }

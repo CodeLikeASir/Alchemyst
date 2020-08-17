@@ -13,33 +13,37 @@
 UCLASS()
 class ALCHEMYST_API UGA_Potion_Throw : public UAlchGameplayAbility
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 protected:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion")
-	class TSubclassOf<class APotion_ThrownActor> ThrownPotionClass;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion")
+    class TSubclassOf<class APotion_ThrownActor> ThrownPotionClass;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion")
-	class UPotion* Potion;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion")
+    class UPotion* Potion;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion")
-	float HitRadius;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion")
+    float HitRadius;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion")
-	class UNiagaraSystem* ExplosionFX;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion")
+    class UNiagaraSystem* ExplosionFX;
 
-	class AAlchemystPlayerController* OwningPlayerController;
-	class AA_PlayerCharacter* OwningPlayerCharacter;
+    class AAlchemystPlayerController* OwningPlayerController;
+    class AA_PlayerCharacter* OwningPlayerCharacter;
 
 public:
-	UGA_Potion_Throw();
-	
-	virtual void ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* OwnerInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData) override;
+    UGA_Potion_Throw();
 
-	virtual void InputReleased(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo) override;
+    virtual void ActivateAbility(FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* OwnerInfo,
+                                 FGameplayAbilityActivationInfo ActivationInfo,
+                                 const FGameplayEventData* TriggerEventData) override;
 
-	virtual void CancelAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, bool bReplicateCancelAbility) override;
+    virtual void InputReleased(FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo,
+                               FGameplayAbilityActivationInfo ActivationInfo) override;
+
+    virtual void CancelAbility(FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo,
+                               FGameplayAbilityActivationInfo ActivationInfo, bool bReplicateCancelAbility) override;
 
 protected:
-	void SpawnPotionProjectile();
+    void SpawnPotionProjectile();
 };

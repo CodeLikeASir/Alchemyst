@@ -4,11 +4,15 @@ using UnrealBuildTool;
 
 public class Alchemyst : ModuleRules
 {
-	public Alchemyst(ReadOnlyTargetRules Target) : base(Target)
-	{
-		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+    public Alchemyst(ReadOnlyTargetRules Target) : base(Target)
+    {
+        PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-        PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay", "NavigationSystem", "AIModule", "UMG", "Niagara" });
-        PrivateDependencyModuleNames.AddRange(new string[] {"GameplayAbilities", "GameplayTags", "GameplayTasks"});
+        PublicDependencyModuleNames.AddRange(new[]
+        {
+            "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay", "NavigationSystem", "AIModule", "UMG",
+            "Niagara"
+        });
+        PrivateDependencyModuleNames.AddRange(new[] {"GameplayAbilities", "GameplayTags", "GameplayTasks"});
     }
 }

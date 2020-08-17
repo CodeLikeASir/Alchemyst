@@ -13,12 +13,20 @@
 UCLASS()
 class ALCHEMYST_API UAlchGameplayAbility : public UGameplayAbility
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 public:
-	UAlchGameplayAbility();
-	
-	// Abilities with this set will automatically activate when the input is pressed
-	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Ability")
-	EGDAbilityInputID AbilityInputID = EGDAbilityInputID::None;
+    UAlchGameplayAbility();
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category= "Ability")
+    FGameplayTag AbilityTag;
+
+    FGameplayTag GetAbilityTag() const
+    {
+        return AbilityTag;
+    }
+
+    // Abilities with this set will automatically activate when the input is pressed
+    UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Ability")
+    EGDAbilityInputID AbilityInputID = EGDAbilityInputID::None;
 };

@@ -33,6 +33,7 @@
           <e p="AlchemystGameMode.cpp" t="Include" />
           <e p="AlchemystPlayerController.cpp" t="Include" />
           <e p="CraftingStation.cpp" t="Include" />
+          <e p="FadeObjectsComponent.cpp" t="Include" />
           <e p="FoodItem.cpp" t="Include" />
           <e p="GAS" t="Include">
             <e p="AlchGameplayAbility.cpp" t="Include" />
@@ -55,6 +56,7 @@
           <e p="AlchemystGameMode.h" t="Include" />
           <e p="AlchemystPlayerController.h" t="Include" />
           <e p="CraftingStation.h" t="Include" />
+          <e p="FadeObjectsComponent.h" t="Include" />
           <e p="FoodItem.h" t="Include" />
           <e p="GAS" t="Include">
             <e p="AlchGameplayAbility.h" t="Include" />

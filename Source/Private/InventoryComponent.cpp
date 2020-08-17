@@ -11,68 +11,59 @@
 // Sets default values for this component's properties
 UInventoryComponent::UInventoryComponent()
 {
-	Capacity = 20;
+    Capacity = 20;
 }
 
 
 // Called when the game starts
 void UInventoryComponent::BeginPlay()
 {
-	Super::BeginPlay();
+    Super::BeginPlay();
 
-	for(auto& Item : DefaultItems)
-	{
-		AddItem(Item);
-	}
-	
-	if(AA_PlayerCharacter* PlayerCharacter = Cast<AA_PlayerCharacter>(GetOwner()))
-	{
-		OwningPlayer = PlayerCharacter;
-	}
+    for (auto& Item : DefaultItems)
+    {
+        AddItem(Item);
+    }
+
+    if (AA_PlayerCharacter* PlayerCharacter = Cast<AA_PlayerCharacter>(GetOwner()))
+    {
+        OwningPlayer = PlayerCharacter;
+    }
 }
 
 bool UInventoryComponent::AddItem(UItem* Item)
 {
-	if(Items.Num() >= Capacity || !Item)
-	{
-		return false;
-	}
+    if (Items.Num() >= Capacity || !Item)
+    {
+        return false;
+    }
 
-	Item->OwningInventory = this;
-	Item->World = GetWorld();
-	Items.Add(Item);
+    Item->OwningInventory = this;
+    Item->World = GetWorld();
+    Items.Add(Item);
 
-	if(UPotion* Potion = Cast<UPotion>(Item))
-	{
-		if(Potion->ThrowAbility)
-		{
-			OwningPlayer->GrantAbility(Potion->ThrowAbility);
-		}
-	}
+    // Update UI
+    OnInventoryUpdated.Broadcast();
 
-	// Update UI
-	OnInventoryUpdated.Broadcast();
-
-	return true;
+    return true;
 }
 
 bool UInventoryComponent::RemoveItem(UItem* Item)
 {
-	if(Item)
-	{
-		Item->OwningInventory = nullptr;
-		Item->World = nullptr;
-		Items.RemoveSingle(Item);
-		OnInventoryUpdated.Broadcast();
+    if (Item)
+    {
+        Item->OwningInventory = nullptr;
+        Item->World = nullptr;
+        Items.RemoveSingle(Item);
+        OnInventoryUpdated.Broadcast();
 
-		if(OwningPlayer->EquippedItem == Item)
-		{
-			OwningPlayer->EquippedItem = nullptr;
-		}
-		
-		return true;
-	}
+        if (OwningPlayer->EquippedItem == Item)
+        {
+            OwningPlayer->EquippedItem = nullptr;
+        }
 
-	return false;
+        return true;
+    }
+
+    return false;
 }
-
