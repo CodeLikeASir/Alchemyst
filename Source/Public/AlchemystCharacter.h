@@ -17,30 +17,13 @@ class AAlchemystCharacter : public ACharacter
 public:
     AAlchemystCharacter();
 
-    // Called every frame.
-    virtual void Tick(float DeltaSeconds) override;
-
-    /** Returns TopDownCameraComponent subobject **/
-    FORCEINLINE class UCameraComponent* GetTopDownCameraComponent() const { return TopDownCameraComponent; }
-    /** Returns CameraBoom subobject **/
-    FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
-    /** Returns CursorToWorld subobject **/
-    FORCEINLINE class UDecalComponent* GetCursorToWorld() { return CursorToWorld; }
-
 private:
-    /** Top down camera */
-    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-    class UCameraComponent* TopDownCameraComponent;
-
-    /** Camera boom positioning the camera above the character */
-    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-    class USpringArmComponent* CameraBoom;
-
-    /** A decal that projects to the cursor location. */
-    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-    class UDecalComponent* CursorToWorld;
+    float DefaultSpeed;
 
 public:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Character")
+    class UCharacterAttributes* Attributes;
+    
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category= "GAS")
     class UAbilitySystemComponent* AbilitySystemComponent;
 
@@ -66,4 +49,29 @@ public:
     FGameplayAbilitySpecHandle PotionThrowHandle;
 
     float GetPlayerSpeed();
+
+    UFUNCTION(BlueprintCallable)
+    float GetHealthPercentage();
+
+    UFUNCTION(BlueprintCallable)
+    void Heal(float Value);
+
+    virtual void OnDeath();
+
+    UFUNCTION()
+    virtual void HandleTakeAnyDamage(AActor* DamagedActor, float Damage, const class UDamageType* DamageType,
+                                     class AController* InstigatedBy, AActor* DamageCauser);
+
+    UFUNCTION(BlueprintImplementableEvent)
+    void HandleTakeAnyDamageBP(AActor* DamagedActor, float Damage, const class UDamageType* DamageType,
+                                     class AController* InstigatedBy, AActor* DamageCauser);
+
+    UFUNCTION(BlueprintCallable)
+    void ApplyGameplayEffect(class UGameplayEffect* GameplayEffect);
+
+    UFUNCTION(BlueprintCallable)
+    USkeletalMeshComponent* GetSkeletalMesh();
+
+    bool bIsStunned;
+    virtual void StunTagChanged(const FGameplayTag CallbackTag, int32 NewCount);
 };

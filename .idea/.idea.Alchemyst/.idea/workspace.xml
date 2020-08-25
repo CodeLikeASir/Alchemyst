@@ -7,67 +7,44 @@
     <list default="true" id="4db02c00-8221-45f7-b445-5d9380129e8e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Alchemyst/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Alchemyst/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Alchemyst/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Alchemyst/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Leaf.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Leaf.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Leaf_Blue.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Leaf_Blue.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Leaf_Green.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Leaf_Green.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Leaf_Grey.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Leaf_Grey.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Leaf_Purple.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Leaf_Purple.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Leaf_Red.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Leaf_Red.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Plant_Gatherable.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Plant_Gatherable.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Plant_Gatherable_Blue.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Plant_Gatherable_Blue.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Plant_Gatherable_Green.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Plant_Gatherable_Green.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Alchemyst/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Alchemyst/riderModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Alchemyst.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/Alchemyst.uproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultGameplayTags.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGameplayTags.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_CraftingStation.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_CraftingStation.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_PlayerCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_Tree.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_Tree.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/GAS/BP_ThrownPotion.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/GAS/BP_ThrownPotion.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Plant_Gatherable_Grey.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Plant_Gatherable_Grey.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Plant_Gatherable_Purple.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Plant_Gatherable_Purple.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Plant_Gatherable_Red.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Items/Plants/BP_Plant_Gatherable_Red.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/DataTable/PotionColorTable.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/DataTable/PotionColorTable.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Geometry/Meshes/Plants/GreenLeaf.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Geometry/Meshes/Plants/GreenPlant.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Geometry/Meshes/Plants/ImphenziaPalette01.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Geometry/Meshes/Plants/Mat_BluePlant.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Geometry/Meshes/Plants/Mat_GreenPlant.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Geometry/Meshes/Plants/Mat_GreyPlant.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Geometry/Meshes/Plants/Mat_PurplePlant.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Geometry/Meshes/Plants/Mat_RedPlant.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Geometry/Meshes/Potion/Cork.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Geometry/Meshes/Potion/Cork.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Textures/Border.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Textures/Border.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/GameplayTags/AbilityTags.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/GameplayTags/AbilityTags.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Geometry/Meshes/Furniture/Table/Mat_Table.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Geometry/Meshes/Furniture/Table/Mat_Table.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Geometry/Meshes/Furniture/Table/Table.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Geometry/Meshes/Furniture/Table/Table.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Material/ForestGround.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Material/ForestGround.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Megascans/Surfaces/Forest_ground_02/Forest_ground_02_inst.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Megascans/Surfaces/Forest_ground_02/Forest_ground_02_inst.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Textures/LowPolyPalette.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Textures/LowPolyPalette.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/TopDownCPP/Maps/TopDownExampleMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/TopDownCPP/Maps/TopDownExampleMap.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/Crafting/Alchemy/WBP_AlchemyStation.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/Crafting/Alchemy/WBP_AlchemyStation.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/Crafting/Alchemy/WBP_IngredientItem.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/Crafting/Alchemy/WBP_IngredientItem.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/Crafting/Alchemy/WBP_AlchemyStation.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/Crafting/Alchemy/WBP_CraftedItem.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/Crafting/Alchemy/WBP_IngredientItem.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/HUD/WBP_PlayerHUD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/HUD/WBP_PlayerHUD.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/UI/Inventory/WBP_Inventory.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/Inventory/WBP_Inventory.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/UI/Inventory/WBP_InventoryItem.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/Inventory/WBP_InventoryItem.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Alchemyst.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Alchemyst.Build.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Alchemyst.Target.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Alchemyst.Target.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/AlchemystEditor.Target.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/AlchemystEditor.Target.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Private/A_Gatherable.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Private/A_Gatherable.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Private/A_PlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Private/A_PlayerCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Private/Alchemyst.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Private/Alchemyst.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Private/AlchemystCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Private/AlchemystCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Private/AlchemystGameMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Private/AlchemystGameMode.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Private/AlchemystPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Private/AlchemystPlayerController.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Private/CraftingStation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Private/CraftingStation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Private/FadeObjectsComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Private/FadeObjectsComponent.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Private/FoodItem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Private/FoodItem.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Private/GAS/AlchGameplayAbility.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Private/GAS/AlchGameplayAbility.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Private/GAS/Potions/GA_Potion_Throw.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Private/GAS/Potions/GA_Potion_Throw.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Private/GAS/Potions/Potion.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Private/GAS/Potions/Potion.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Private/GAS/Potions/Potion_ThrownActor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Private/GAS/Potions/Potion_ThrownActor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Private/Interactible.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Private/Interactible.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Private/InventoryComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Private/InventoryComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Private/Item.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Private/Item.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Public/A_Gatherable.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Public/A_Gatherable.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Public/A_PlayerCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Public/A_PlayerCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Public/Alchemyst.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Public/Alchemyst.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Public/AlchemystCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Public/AlchemystCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Public/AlchemystGameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Public/AlchemystGameMode.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Public/AlchemystPlayerController.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Public/AlchemystPlayerController.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Public/CraftingStation.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Public/CraftingStation.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Public/FoodItem.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Public/FoodItem.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Public/GAS/AlchGameplayAbility.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Public/GAS/AlchGameplayAbility.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Public/GAS/Potions/GA_Potion_Throw.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Public/GAS/Potions/GA_Potion_Throw.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Public/GAS/Potions/Plant.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Public/GAS/Potions/Plant.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Public/GAS/Potions/Potion.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Public/GAS/Potions/Potion.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Public/GAS/Potions/Potion_ThrownActor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Public/GAS/Potions/Potion_ThrownActor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Public/Interactible.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Public/Interactible.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Public/InventoryComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Public/InventoryComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Public/Item.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Public/Item.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,72 +55,108 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://E:/UE_4.25/Engine/Source/Runtime/Engine/Classes/Components/SceneComponent.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Private/GAS/Potions/GA_Potion_Consume.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://E:/UE_4.25/Engine/Source/Runtime/Engine/Classes/Engine/Texture2D.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://E:/UE_4.25/Engine/Source/Runtime/Core/Public/Containers/Array.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Private/Item.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://E:/UE_4.25/Engine/Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Public/Abilities/GameplayAbility.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Public/GAS/Potions/GA_Potion_Consume.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Public/Item.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Private/GAS/Potions/Potion_ThrownActor.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Private/A_Gatherable.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Public/GAS/Potions/Potion_ThrownActor.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://E:/UE_4.25/Engine/Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Public/AbilitySystemComponent.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Public/A_Gatherable.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Public/GAS/Potions/Potion.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Public/GAS/Potions/GA_Potion_Throw.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UE4Editor/Inc/Alchemyst/GA_Potion_Throw.gen.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Private/GAS/Potions/Potion.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Private/GAS/Potions/GA_Potion_Throw.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Private/AlchemystCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://E:/UE_4.25/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://E:/UE_4.25/Engine/Source/Runtime/GameplayTags/Classes/GameplayTagContainer.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Private/FoodItem.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Public/Alchemyst.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Public/AlchemystCharacter.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Public/AlchemystPlayerController.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Public/GAS/Potions/Plant.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Private/GAS/Potions/Plant.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Alchemyst.Build.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://E:/UE_4.25/Engine/Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Public/GameplayAbilitySpec.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Private/GAS/AttributeSet/CharacterAttributes.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Private/CraftingStation.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Private/AlchemystPlayerController.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Public/GAS/AlchGameplayAbility.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Private/GAS/AlchGameplayAbility.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Public/AlchLevelScriptActor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Public/CraftingStation.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Private/A_PlayerCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Public/FadeObjectsComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Public/A_PlayerCharacter.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Private/FadeObjectsComponent.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Private/LootBox.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://E:/UE_4.25/Engine/Source/Runtime/Core/Public/Math/TransformVectorized.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Private/AlchLevelScriptActor.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://E:/UE_4.25/Engine/Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Public/Abilities/GameplayAbility.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Private/A_Gatherable.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://E:/UE_4.25/Engine/Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Public/AbilitySystemComponent.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Public/A_Gatherable.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://E:/UE_4.25/Engine/Plugins/Runtime/GameplayAbilities/Source/GameplayAbilities/Public/GameplayEffectTypes.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Public/Interactible.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Private/Interactible.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://E:/UE_4.25/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Public/AlchemystCharacter.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Public/LootBox.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://E:/UE_4.25/Engine/Source/Runtime/Core/Public/Templates/MemoryOps.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Private/AlchemystPlayerController.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Public/GAS/AlchGameplayAbility.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://E:/UE_4.25/Engine/Source/Runtime/CoreUObject/Public/UObject/Object.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Private/GAS/AlchGameplayAbility.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Public/GAS/AttributeSet/CharacterAttributes.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://E:/UE_4.25/Engine/Source/Runtime/Engine/Classes/GameFramework/Character.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Private/A_Enemy.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Public/A_Enemy.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Public/InventoryComponent.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://E:/UE_4.25/Engine/Source/Runtime/Engine/Classes/GameFramework/Pawn.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://E:/UE_4.25/Engine/Source/Runtime/Core/Public/Templates/PointerIsConvertibleFromTo.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Private/InventoryComponent.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Source/Alchemyst.Build.cs" />
         <option value="$PROJECT_DIR$/Source/Public/Item.h" />
         <option value="$PROJECT_DIR$/Source/Private/Item.cpp" />
         <option value="$PROJECT_DIR$/Source/Public/A_Gatherable.h" />
         <option value="$PROJECT_DIR$/Source/Private/GAS/Potions/Plant.cpp" />
         <option value="$PROJECT_DIR$/Source/Private/A_Gatherable.cpp" />
         <option value="$PROJECT_DIR$/Source/Public/GAS/Potions/Plant.h" />
-        <option value="$PROJECT_DIR$/Source/Public/InventoryComponent.h" />
         <option value="$PROJECT_DIR$/Source/Private/GAS/AlchGameplayAbility.cpp" />
         <option value="$PROJECT_DIR$/Source/Public/Alchemyst.h" />
-        <option value="$PROJECT_DIR$/Source/Public/CraftingStation.h" />
-        <option value="$PROJECT_DIR$/Source/Private/GAS/Potions/Potion.cpp" />
-        <option value="$PROJECT_DIR$/Source/Public/GAS/Potions/Potion.h" />
-        <option value="$PROJECT_DIR$/Source/Public/AlchemystPlayerController.h" />
-        <option value="$PROJECT_DIR$/Source/Private/AlchemystPlayerController.cpp" />
-        <option value="$PROJECT_DIR$/Source/Private/CraftingStation.cpp" />
         <option value="$PROJECT_DIR$/Source/Public/FadeObjectsComponent.h" />
-        <option value="$PROJECT_DIR$/Source/Private/InventoryComponent.cpp" />
-        <option value="$PROJECT_DIR$/Source/Public/GAS/Potions/GA_Potion_Throw.h" />
         <option value="$PROJECT_DIR$/Source/Public/GAS/AlchGameplayAbility.h" />
+        <option value="$PROJECT_DIR$/Source/Private/GAS/Potions/GA_Potion_Throw.cpp" />
+        <option value="$PROJECT_DIR$/Source/Public/LevelGen.h" />
+        <option value="$PROJECT_DIR$/Source/Private/LevelGen.cpp" />
+        <option value="$PROJECT_DIR$/Source/Public/AlchLevelScriptActor.h" />
+        <option value="$PROJECT_DIR$/Source/Private/AlchLevelScriptActor.cpp" />
+        <option value="$PROJECT_DIR$/Source/Public/GAS/Potions/GA_Potion_Consume.h" />
+        <option value="$PROJECT_DIR$/Source/Public/GAS/Potions/GA_Potion_Throw.h" />
+        <option value="$PROJECT_DIR$/Source/Private/GAS/Potions/GA_Potion_Consume.cpp" />
+        <option value="$PROJECT_DIR$/Source/Private/FoodItem.cpp" />
+        <option value="$PROJECT_DIR$/Source/Public/AlchemystPlayerController.h" />
+        <option value="$PROJECT_DIR$/Source/Public/CraftingStation.h" />
+        <option value="$PROJECT_DIR$/Source/Public/GAS/Potions/Potion.h" />
+        <option value="$PROJECT_DIR$/Source/Private/GAS/Potions/Potion.cpp" />
+        <option value="$PROJECT_DIR$/Source/Alchemyst.Build.cs" />
+        <option value="$PROJECT_DIR$/Source/Private/FadeObjectsComponent.cpp" />
         <option value="$PROJECT_DIR$/Source/Public/GAS/Potions/Potion_ThrownActor.h" />
-        <option value="$PROJECT_DIR$/Source/Private/GAS/Potions/Potion_ThrownActor.cpp" />
+        <option value="$PROJECT_DIR$/Source/Public/A_PlayerCharacter.h" />
+        <option value="$PROJECT_DIR$/Source/Private/A_PlayerCharacter.cpp" />
+        <option value="$PROJECT_DIR$/Source/Public/GAS/AttributeSet/CharacterAttributes.h" />
+        <option value="$PROJECT_DIR$/Source/Private/GAS/AttributeSet/CharacterAttributes.cpp" />
+        <option value="$PROJECT_DIR$/Source/Private/AlchemystPlayerController.cpp" />
         <option value="$PROJECT_DIR$/Source/Public/AlchemystCharacter.h" />
         <option value="$PROJECT_DIR$/Source/Private/AlchemystCharacter.cpp" />
-        <option value="$PROJECT_DIR$/Source/Public/A_PlayerCharacter.h" />
-        <option value="$PROJECT_DIR$/Source/Private/GAS/Potions/GA_Potion_Throw.cpp" />
-        <option value="$PROJECT_DIR$/Source/Private/A_PlayerCharacter.cpp" />
-        <option value="$PROJECT_DIR$/Source/Private/FadeObjectsComponent.cpp" />
+        <option value="$PROJECT_DIR$/Source/Private/CraftingStation.cpp" />
+        <option value="$PROJECT_DIR$/Source/Public/LootBox.h" />
+        <option value="$PROJECT_DIR$/Source/Public/InventoryComponent.h" />
+        <option value="$PROJECT_DIR$/Source/Private/GAS/Potions/Potion_ThrownActor.cpp" />
+        <option value="$PROJECT_DIR$/Source/Private/InventoryComponent.cpp" />
+        <option value="$PROJECT_DIR$/Source/Private/LootBox.cpp" />
+        <option value="$PROJECT_DIR$/Source/Public/A_Enemy.h" />
+        <option value="$PROJECT_DIR$/Source/Private/A_Enemy.cpp" />
       </list>
     </option>
   </component>
@@ -153,6 +166,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34995976" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30008045" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -382,22 +397,70 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1027" y="545" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1597449032987" />
-    <state width="2517" height="396" key="GridCell.Tab.0.bottom" timestamp="1597687591762">
+    <state width="2517" height="350" key="GridCell.Tab.0.bottom" timestamp="1598319280208">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="396" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1597687591762" />
-    <state width="2517" height="396" key="GridCell.Tab.0.center" timestamp="1597687591762">
+    <state width="2517" height="350" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1598319280208" />
+    <state width="2517" height="350" key="GridCell.Tab.0.center" timestamp="1598319280208">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="396" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1597687591762" />
-    <state width="2517" height="396" key="GridCell.Tab.0.left" timestamp="1597687591762">
+    <state width="2517" height="350" key="GridCell.Tab.0.center/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1598319280208" />
+    <state width="2517" height="350" key="GridCell.Tab.0.left" timestamp="1598319280208">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="396" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1597687591762" />
-    <state width="2517" height="396" key="GridCell.Tab.0.right" timestamp="1597687591762">
+    <state width="2517" height="350" key="GridCell.Tab.0.left/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1598319280208" />
+    <state width="2517" height="350" key="GridCell.Tab.0.right" timestamp="1598319280208">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="396" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1597687591762" />
+    <state width="2517" height="350" key="GridCell.Tab.0.right/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1598319280208" />
+    <state width="2517" height="519" key="GridCell.Tab.1.bottom" timestamp="1598295790982">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.1.bottom/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1598295790982" />
+    <state width="2517" height="519" key="GridCell.Tab.1.center" timestamp="1598295790982">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.1.center/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1598295790982" />
+    <state width="2517" height="519" key="GridCell.Tab.1.left" timestamp="1598295790982">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.1.left/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1598295790982" />
+    <state width="2517" height="519" key="GridCell.Tab.1.right" timestamp="1598295790982">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.1.right/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1598295790982" />
+    <state width="2517" height="519" key="GridCell.Tab.2.bottom" timestamp="1598295790982">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.2.bottom/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1598295790982" />
+    <state width="2517" height="519" key="GridCell.Tab.2.center" timestamp="1598295790982">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.2.center/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1598295790982" />
+    <state width="2517" height="519" key="GridCell.Tab.2.left" timestamp="1598295790982">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.2.left/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1598295790982" />
+    <state width="2517" height="519" key="GridCell.Tab.2.right" timestamp="1598295790982">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.2.right/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1598295790982" />
+    <state width="2517" height="519" key="GridCell.Tab.3.bottom" timestamp="1598295790982">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.3.bottom/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1598295790982" />
+    <state width="2517" height="519" key="GridCell.Tab.3.center" timestamp="1598295790982">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.3.center/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1598295790982" />
+    <state width="2517" height="519" key="GridCell.Tab.3.left" timestamp="1598295790982">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.3.left/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1598295790982" />
+    <state width="2517" height="519" key="GridCell.Tab.3.right" timestamp="1598295790982">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2517" height="519" key="GridCell.Tab.3.right/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1598295790982" />
     <state x="1002" y="273" key="RiderGenerateDialog" timestamp="1597680225376">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -406,13 +469,21 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1095" y="421" key="RollbackChangesDialog/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1597164295343" />
-    <state x="927" y="315" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1597329839451">
+    <state x="927" y="315" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1598208615614">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="927" y="315" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1597329839451" />
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1597440282940">
+    <state x="927" y="315" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1598208615614" />
+    <state x="368" y="183" width="2115" height="1148" key="dock-window-1" timestamp="1598187568761">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1597440282940" />
+    <state x="368" y="183" width="2115" height="1148" key="dock-window-1/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1598187568761" />
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1597747337804">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="943" y="315" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1597747337804" />
+    <state x="1002" y="613" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1598213329783">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1002" y="613" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.2560.1400/-1920.156.1920.1080@0.0.2560.1400" timestamp="1598213329783" />
   </component>
 </project>

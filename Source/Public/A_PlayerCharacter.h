@@ -22,18 +22,37 @@ protected:
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Component")
     class USceneComponent* ThrowPosition;
 
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
     TArray<class AInteractible*> ObjectsInRange;
 
-public:
+public:   
+    /** Top down camera */
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+    class UCameraComponent* TopDownCameraComponent;
+
+    /** Camera boom positioning the camera above the character */
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+    class USpringArmComponent* CameraBoom;
+
+    /** A decal that projects to the cursor location. */
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+    class UDecalComponent* CursorToWorld;
+
+    /** Returns TopDownCameraComponent subobject **/
+    FORCEINLINE class UCameraComponent* GetTopDownCameraComponent() const { return TopDownCameraComponent; }
+    /** Returns CameraBoom subobject **/
+    FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
+    /** Returns CursorToWorld subobject **/
+    FORCEINLINE class UDecalComponent* GetCursorToWorld() { return CursorToWorld; }
+    
     AA_PlayerCharacter();
+
+    virtual void Tick(float DeltaSeconds) override;
 
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category= "Player")
     class UItem* EquippedItem;
 
-    UItem* GetEquippedItem() const
-    {
-        return EquippedItem;
-    }
+    UItem* GetEquippedItem() const { return EquippedItem; }
 
     UFUNCTION(BlueprintCallable)
     void SetEquippedItem(UItem* NewEquippedItem);
@@ -57,11 +76,13 @@ public:
 
     FVector GetThrowPos();
 
-    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category= "Health")
-    float Health;
-
     UFUNCTION(BlueprintCallable, Category= "Items")
     void UseItem(class UItem* Item);
 
     void RemoveItem(class UItem* Item);
+
+    bool bDisableCursor;
+
+    UFUNCTION(BlueprintCallable)
+    void SetDisableCursor(bool Value);
 };

@@ -15,6 +15,8 @@ ACraftingStation::ACraftingStation()
 {
     Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
     Mesh->SetupAttachment(RootComponent);
+
+    RootComponent->Mobility = EComponentMobility::Static;
 }
 
 // Called when the game starts or when spawned
@@ -26,6 +28,7 @@ void ACraftingStation::BeginPlay()
 void ACraftingStation::Interact(AA_PlayerCharacter* InteractingPlayer)
 {
     CurrentPlayer = InteractingPlayer;
+    InteractingPlayer->SetDisableCursor(true);
 
     Super::Interact(InteractingPlayer);
 }
@@ -40,6 +43,10 @@ UPotion* ACraftingStation::OnCraftingCompleted(TArray<UItem*> UsedItems)
         {
             CraftedTaste += Plant->Taste;
         }
+        else
+        {
+            return nullptr;
+        }
     }
 
     UPotion* CraftedPotion = NewObject<UPotion>();
@@ -47,7 +54,7 @@ UPotion* ACraftingStation::OnCraftingCompleted(TArray<UItem*> UsedItems)
 
     if (UPlant* Plant = Cast<UPlant>(UsedItems[0]))
         CraftedPotion->SetLiquidColor(Plant->LiquidColor);
-
+    
     CraftedPotion->ThrowAbility = PotionAbilities[CraftedPotion->ThrowAbilityIndex];
 
     return CraftedPotion;

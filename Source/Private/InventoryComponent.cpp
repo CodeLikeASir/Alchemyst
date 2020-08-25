@@ -67,3 +67,11 @@ bool UInventoryComponent::RemoveItem(UItem* Item)
 
     return false;
 }
+
+void UInventoryComponent::InitItems(TArray<UItem*> NewItems)
+{
+    for (UItem* Item : NewItems)
+    {
+        Items.Add(Item);
+    }
+}

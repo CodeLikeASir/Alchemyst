@@ -68,7 +68,7 @@ void AAlchemystPlayerController::MoveToMouseCursor()
 {
     if (UHeadMountedDisplayFunctionLibrary::IsHeadMountedDisplayEnabled())
     {
-        if (AAlchemystCharacter* MyPawn = Cast<AAlchemystCharacter>(GetPawn()))
+        if (AA_PlayerCharacter* MyPawn = Cast<AA_PlayerCharacter>(GetPawn()))
         {
             if (MyPawn->GetCursorToWorld())
             {
@@ -83,7 +83,9 @@ void AAlchemystPlayerController::MoveToMouseCursor()
         FHitResult Hit;
         GetHitResultUnderCursor(ECC_Visibility, false, Hit);
 
-        if (Hit.bBlockingHit)
+        AA_PlayerCharacter* MyPawn = Cast<AA_PlayerCharacter>(GetPawn());
+
+        if (Hit.bBlockingHit && !MyPawn->bIsStunned)
         {
             // We hit something, move there
             SetNewMoveDestination(Hit.ImpactPoint);

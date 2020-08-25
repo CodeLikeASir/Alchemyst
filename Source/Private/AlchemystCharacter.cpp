@@ -14,9 +14,10 @@
 #include "AbilitySystemComponent.h"
 #include "Alchemyst.h"
 #include "GameplayAbilitySpec.h"
-#include "GAS/Potions/GA_Potion_Throw.h"
 #include "Abilities/GameplayAbilityTypes.h"
 #include "GAS/AlchGameplayAbility.h"
+#include "GAS/AttributeSet/CharacterAttributes.h"
+#include "GameplayEffect.h"
 
 AAlchemystCharacter::AAlchemystCharacter()
 {
@@ -34,68 +35,17 @@ AAlchemystCharacter::AAlchemystCharacter()
     GetCharacterMovement()->bConstrainToPlane = true;
     GetCharacterMovement()->bSnapToPlaneAtStart = true;
 
-    // Create a camera boom...
-    CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
-    CameraBoom->SetupAttachment(RootComponent);
-    CameraBoom->SetUsingAbsoluteRotation(true); // Don't want arm to rotate when character does
-    CameraBoom->TargetArmLength = 800.f;
-    CameraBoom->SetRelativeRotation(FRotator(-60.f, 0.f, 0.f));
-    CameraBoom->bDoCollisionTest = false; // Don't want to pull camera in when it collides with level
-
-    // Create a camera...
-    TopDownCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("TopDownCamera"));
-    TopDownCameraComponent->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
-    TopDownCameraComponent->bUsePawnControlRotation = false; // Camera does not rotate relative to arm
-
-    // Create a decal in the world to show the cursor's location
-    CursorToWorld = CreateDefaultSubobject<UDecalComponent>("CursorToWorld");
-    CursorToWorld->SetupAttachment(RootComponent);
-    static ConstructorHelpers::FObjectFinder<UMaterial> DecalMaterialAsset(
-        TEXT("Material'/Game/TopDownCPP/Blueprints/M_Cursor_Decal.M_Cursor_Decal'"));
-    if (DecalMaterialAsset.Succeeded())
-    {
-        CursorToWorld->SetDecalMaterial(DecalMaterialAsset.Object);
-    }
-    CursorToWorld->DecalSize = FVector(16.0f, 32.0f, 32.0f);
-    CursorToWorld->SetRelativeRotation(FRotator(90.0f, 0.0f, 0.0f).Quaternion());
-
-    // Activate ticking in order to update the cursor every frame.
-    PrimaryActorTick.bCanEverTick = true;
-    PrimaryActorTick.bStartWithTickEnabled = true;
-
     AbilitySystemComponent = CreateDefaultSubobject<UAbilitySystemComponent>(TEXT("AbilitySystem"));
-}
 
-void AAlchemystCharacter::Tick(float DeltaSeconds)
-{
-    Super::Tick(DeltaSeconds);
+    Attributes = CreateDefaultSubobject<UCharacterAttributes>(TEXT("CharacterAttributes"));
+    Attributes->InitMaxHealth(100.f);
+    Attributes->InitHealth(100.f);
 
-    if (CursorToWorld != nullptr)
-    {
-        if (UHeadMountedDisplayFunctionLibrary::IsHeadMountedDisplayEnabled())
-        {
-            if (UWorld* World = GetWorld())
-            {
-                FHitResult HitResult;
-                FCollisionQueryParams Params(NAME_None, FCollisionQueryParams::GetUnknownStatId());
-                FVector StartLocation = TopDownCameraComponent->GetComponentLocation();
-                FVector EndLocation = TopDownCameraComponent->GetComponentRotation().Vector() * 2000.0f;
-                Params.AddIgnoredActor(this);
-                World->LineTraceSingleByChannel(HitResult, StartLocation, EndLocation, ECC_Visibility, Params);
-                FQuat SurfaceRotation = HitResult.ImpactNormal.ToOrientationRotator().Quaternion();
-                CursorToWorld->SetWorldLocationAndRotation(HitResult.Location, SurfaceRotation);
-            }
-        }
-        else if (APlayerController* PC = Cast<APlayerController>(GetController()))
-        {
-            FHitResult TraceHitResult;
-            PC->GetHitResultUnderCursor(ECC_Visibility, true, TraceHitResult);
-            FVector CursorFV = TraceHitResult.ImpactNormal;
-            FRotator CursorR = CursorFV.Rotation();
-            CursorToWorld->SetWorldLocation(TraceHitResult.Location);
-            CursorToWorld->SetWorldRotation(CursorR);
-        }
-    }
+    OnTakeAnyDamage.AddDynamic(this, &AAlchemystCharacter::HandleTakeAnyDamage);
+
+    AbilitySystemComponent->RegisterGameplayTagEvent(FGameplayTag::RequestGameplayTag(FName("CC.Petrified")), EGameplayTagEventType::NewOrRemoved).AddUObject(this, &AAlchemystCharacter::StunTagChanged);
+
+    DefaultSpeed = 600.f; // GetCharacterMovement()->GetMaxSpeed();
 }
 
 void AAlchemystCharacter::AddCharacterAbilities()
@@ -188,4 +138,61 @@ void AAlchemystCharacter::RemoveAbility(TSubclassOf<UAlchGameplayAbility> Abilit
 float AAlchemystCharacter::GetPlayerSpeed()
 {
     return GetVelocity().Size();
+}
+
+float AAlchemystCharacter::GetHealthPercentage()
+{
+    return Attributes->GetHealthPercentage();
+}
+
+void AAlchemystCharacter::Heal(float Value)
+{
+    Attributes->SetHealth(Attributes->GetHealth() + Value);
+}
+
+void AAlchemystCharacter::OnDeath()
+{
+    GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("%s died."), *GetName()));
+
+    Destroy();
+}
+
+void AAlchemystCharacter::HandleTakeAnyDamage(AActor* DamagedActor, float Damage, const UDamageType* DamageType,
+                                              AController* InstigatedBy, AActor* DamageCauser)
+{
+    HandleTakeAnyDamageBP(DamagedActor, Damage, DamageType, InstigatedBy, DamageCauser);
+    
+    GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("%s took %f points of damage"), *DamagedActor->GetName(), Damage));
+    Attributes->Health.SetCurrentValue(Attributes->Health.GetCurrentValue() - Damage);
+
+    if(Attributes->Health.GetCurrentValue() <= 0.f)
+    {
+        Destroy();
+    }
+}
+
+void AAlchemystCharacter::ApplyGameplayEffect(UGameplayEffect* GameplayEffect)
+{
+    // (const UGameplayEffect *GameplayEffect, float Level, const FGameplayEffectContextHandle& EffectContext, FPredictionKey PredictionKey = FPredictionKey())
+    FGameplayEffectContextHandle Handle = FGameplayEffectContextHandle();
+    AbilitySystemComponent->ApplyGameplayEffectToSelf(GameplayEffect, 0.f, Handle);
+}
+
+USkeletalMeshComponent* AAlchemystCharacter::GetSkeletalMesh()
+{
+    return GetMesh();
+}
+
+void AAlchemystCharacter::StunTagChanged(const FGameplayTag CallbackTag, int32 NewCount)
+{
+    GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Pew Pew Pew")));
+    
+    if(CallbackTag == FGameplayTag::RequestGameplayTag(FName("CC.Petrified")))
+    {
+        GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Stun tag changed")));
+        AbilitySystemComponent->CancelAbilities();
+
+        bIsStunned = !bIsStunned;
+        GetCharacterMovement()->MaxWalkSpeed = bIsStunned ? 0.f : 600.f; //DefaultSpeed;
+    }
 }

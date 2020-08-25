@@ -42,4 +42,13 @@ public:
 
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category= "Items")
     TArray<class UItem*> Items;
+
+    UFUNCTION(BlueprintCallable)
+    void InitItems(TArray<class UItem*> NewItems);
+
+    UFUNCTION(BlueprintCallable)
+    bool IsEmpty()
+    {
+        return Items.Num() == 0;
+    }
 };

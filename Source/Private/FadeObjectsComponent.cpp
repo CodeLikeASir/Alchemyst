@@ -194,8 +194,14 @@ void UFadeObjectsComponent::FadeObjWorker()
                 const float newFade = FMath::FInterpConstantTo(currentF, targetF, GetWorld()->GetDeltaSeconds(),
                                                                FadeRate);
 
+                if(i >= FadeObjects.Num())
+                    break;
+                
                 FadeObjects[i].FadeMID[t]->SetScalarParameterValue("Fade", newFade);
 
+                if(!CurrentFade || !newFade)
+                    continue;
+                
                 CurrentFade = newFade;
 
                 if(i < FadeObjects.Num() && newFade)

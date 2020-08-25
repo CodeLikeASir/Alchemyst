@@ -29,9 +29,6 @@ protected:
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Potion")
     class UNiagaraSystem* HitFX;
 
-    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Potion")
-    class USphereComponent* HitSphere;
-
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Potion")
     class UPotion* ThrownPotion;
 
@@ -39,7 +36,12 @@ protected:
     void OnCompHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp,
                    FVector NormalImpulse, const FHitResult& Hit);
 
+    float HitRadius;
+
 public:
     UFUNCTION(BlueprintCallable)
     void InitThrownPotion(UPotion* Potion, float PlayerSpeed);
+
+    UPROPERTY(EditAnywhere)
+    TSubclassOf<class UGameplayEffect> AppliedEffect;
 };

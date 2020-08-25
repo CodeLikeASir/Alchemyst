@@ -13,6 +13,6 @@ public class Alchemyst : ModuleRules
             "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay", "NavigationSystem", "AIModule", "UMG",
             "Niagara"
         });
-        PrivateDependencyModuleNames.AddRange(new[] {"GameplayAbilities", "GameplayTags", "GameplayTasks"});
+        PrivateDependencyModuleNames.AddRange(new[] {"GameplayAbilities", "GameplayTags", "GameplayTasks", "CashGen", "UnrealFastNoisePlugin"});
     }
 }

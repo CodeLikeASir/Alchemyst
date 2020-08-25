@@ -47,6 +47,38 @@ struct FTasteStruct
 
         return *this;
     }
+
+    int GetDominantTaste()
+    {
+        int DominantTaste = 0;
+        float DominantValue = Sweetness;
+
+        if(Sourness > DominantValue)
+        {
+            DominantTaste = 1;
+            DominantValue = Sourness;
+        }
+
+        if(Saltiness > DominantValue)
+        {
+            DominantTaste = 2;
+            DominantValue = Saltiness;
+        }
+
+        if(Bitterness > DominantValue)
+        {
+            DominantTaste = 3;
+            DominantValue = Bitterness;
+        }
+        
+        if(Spiciness > DominantValue)
+        {
+            DominantTaste = 4;
+            DominantValue = Spiciness;
+        }
+
+        return DominantTaste;
+    }
 };
 
 USTRUCT(BlueprintType)
@@ -96,7 +128,10 @@ public:
     FTasteStruct Taste;
 
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category= "Ability")
-    TSubclassOf<class UAlchGameplayAbility> ThrowAbility;
+    TSubclassOf<class UGA_Potion_Throw> ThrowAbility;
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category= "Ability")
+    TSubclassOf<class UGA_Potion_Consume> ConsumeAbility;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Ability")
     TEnumAsByte<EPotionAbilities> ThrowAbilityIndex;
@@ -109,4 +144,7 @@ public:
 
     UFUNCTION(BlueprintCallable)
     void SetLiquidColor(TEnumAsByte<EPotionColors> NewColor);
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Potion")
+    float ImpactRadius;
 };

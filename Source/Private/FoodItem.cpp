@@ -10,7 +10,7 @@ void UFoodItem::Use(AA_PlayerCharacter* Character)
 {
     if (Character)
     {
-        Character->Health += HealthToHeal;
+        Character->Heal(HealthToHeal);
 
         if (OwningInventory)
         {

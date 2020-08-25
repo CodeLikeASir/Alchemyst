@@ -15,6 +15,7 @@ UPotion::UPotion()
     }
 
     ThrowAbilityIndex = Throw_Explosive;
+    ImpactRadius = 100.f;
 }
 
 FLinearColor UPotion::GetLiquidColor()

@@ -23,6 +23,14 @@
 		{
 			"Name": "GameplayAbilities",
 			"Enabled": true
+		},
+		{
+			"Name": "UnrealFastNoisePlugin",
+			"Enabled": true
+		},
+		{
+			"Name": "CashGen",
+			"Enabled": true
 		}
 	]
 }

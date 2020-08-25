@@ -305,6 +305,7 @@
     <content url="file://E:/UE_4.25/Engine/Plugins/Tests/PythonAutomationTest" />
     <content url="file://E:/UE_4.25/Engine/Plugins/Tests/RuntimeTests" />
     <content url="file://E:/UE_4.25/Engine/Plugins/Tests/ScreenshotTools" />
+    <content url="file://E:/UE_4.25/Engine/Plugins/UnrealFastNoise" />
     <content url="file://E:/UE_4.25/Engine/Plugins/VirtualProduction/CompositePlane" />
     <content url="file://E:/UE_4.25/Engine/Plugins/VirtualProduction/DataCharts" />
     <content url="file://E:/UE_4.25/Engine/Plugins/VirtualProduction/RemoteControl" />

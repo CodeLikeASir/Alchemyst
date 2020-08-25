@@ -11,6 +11,7 @@
         <e p="DefaultEditorPerProjectUserSettings.ini" t="Include" />
         <e p="DefaultEngine.ini" t="Include" />
         <e p="DefaultGame.ini" t="Include" />
+        <e p="DefaultGameplayTags.ini" t="Include" />
         <e p="DefaultInput.ini" t="Include" />
       </e>
       <e p="Engine" t="Include" />
@@ -21,23 +22,122 @@
         <e p="UE4.vcxproj" t="IncludeRecursive" />
       </e>
       <e p="packages" t="ExcludeRecursive" />
+      <e p="Plugins" t="Include">
+        <e p="cashgenUE" t="Include">
+          <e p="CashGen.uplugin" t="Include" />
+          <e p="Resources" t="Include">
+            <e p="Icon128.png" t="Include" />
+          </e>
+          <e p="Source" t="Include">
+            <e p="CashGen" t="Include">
+              <e p="cashgen.Build.cs" t="Include" />
+              <e p="Private" t="Include">
+                <e p="CashGen.cpp" t="Include" />
+                <e p="cashgenPrivatePCH.h" t="Include" />
+                <e p="CGMCQueue.cpp" t="Include" />
+                <e p="CGObjectPool.cpp" t="Include" />
+                <e p="CGTerrainGeneratorWorker.cpp" t="Include" />
+                <e p="CGTerrainManager.cpp" t="Include" />
+                <e p="CGTerrainTrackerComponent.cpp" t="Include" />
+                <e p="CGTile.cpp" t="Include" />
+              </e>
+              <e p="Public" t="Include">
+                <e p="CashGen.h" t="Include" />
+                <e p="CGMCQueue.h" t="Include" />
+                <e p="CGObjectPool.h" t="Include" />
+                <e p="CGSettings.h" t="Include" />
+                <e p="CGTerrainGeneratorWorker.h" t="Include" />
+                <e p="CGTerrainManager.h" t="Include" />
+                <e p="CGTerrainTrackerComponent.h" t="Include" />
+                <e p="CGTile.h" t="Include" />
+                <e p="Struct" t="Include">
+                  <e p="CGJob.h" t="Include" />
+                  <e p="CGLODConfig.h" t="Include" />
+                  <e p="CGLODMeshData.h" t="Include" />
+                  <e p="CGMeshData.h" t="Include" />
+                  <e p="CGSector.h" t="Include" />
+                  <e p="CGTerrainConfig.h" t="Include" />
+                  <e p="CGTileHandle.h" t="Include" />
+                  <e p="IntVector2.h" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="UnrealFastNoise" t="Include">
+          <e p="Resources" t="Include">
+            <e p="Icon128.png" t="Include" />
+          </e>
+          <e p="Source" t="Include">
+            <e p="UnrealFastNoisePlugin" t="Include">
+              <e p="Private" t="Include">
+                <e p="FastNoise" t="Include">
+                  <e p="FastNoise.cpp" t="Include" />
+                  <e p="LICENSE" t="Include" />
+                  <e p="README.md" t="Include" />
+                </e>
+                <e p="UFN3SelectModule.cpp" t="Include" />
+                <e p="UFNAddModule.cpp" t="Include" />
+                <e p="UFNBlendModule.cpp" t="Include" />
+                <e p="UFNBlueprintFunctionLibrary.cpp" t="Include" />
+                <e p="UFNConstantModule.cpp" t="Include" />
+                <e p="UFNNoiseGenerator.cpp" t="Include" />
+                <e p="UFNRadialModule.cpp" t="Include" />
+                <e p="UFNScaleBiasModule.cpp" t="Include" />
+                <e p="UFNSelectModule.cpp" t="Include" />
+                <e p="UFNShoreFilterModule.cpp" t="Include" />
+                <e p="UFNSplineGenerator.cpp" t="Include" />
+                <e p="UFNWarpModule.cpp" t="Include" />
+                <e p="UnrealFastNoisePlugin.cpp" t="Include" />
+                <e p="UnrealFastNoisePluginPrivatePCH.h" t="Include" />
+              </e>
+              <e p="Public" t="Include">
+                <e p="FastNoise" t="Include">
+                  <e p="FastNoise.h" t="Include" />
+                </e>
+                <e p="UFN3SelectModule.h" t="Include" />
+                <e p="UFNAddModule.h" t="Include" />
+                <e p="UFNBlendModule.h" t="Include" />
+                <e p="UFNBlueprintFunctionLibrary.h" t="Include" />
+                <e p="UFNConstantModule.h" t="Include" />
+                <e p="UFNNoiseGenerator.h" t="Include" />
+                <e p="UFNRadialModule.h" t="Include" />
+                <e p="UFNScaleBiasModule.h" t="Include" />
+                <e p="UFNSelectModule.h" t="Include" />
+                <e p="UFNShoreFilterModule.h" t="Include" />
+                <e p="UFNSplineGenerator.h" t="Include" />
+                <e p="UFNWarpModule.h" t="Include" />
+                <e p="UnrealFastNoisePlugin.h" t="Include" />
+              </e>
+              <e p="UnrealFastNoisePlugin.Build.cs" t="Include" />
+            </e>
+          </e>
+          <e p="UnrealFastNoisePlugin.uplugin" t="Include" />
+        </e>
+      </e>
       <e p="Source" t="Include">
         <e p="Alchemyst.Build.cs" t="Include" />
         <e p="Alchemyst.Target.cs" t="Include" />
         <e p="AlchemystEditor.Target.cs" t="Include" />
         <e p="Private" t="Include">
+          <e p="A_Enemy.cpp" t="Include" />
           <e p="A_Gatherable.cpp" t="Include" />
           <e p="A_PlayerCharacter.cpp" t="Include" />
           <e p="Alchemyst.cpp" t="Include" />
           <e p="AlchemystCharacter.cpp" t="Include" />
           <e p="AlchemystGameMode.cpp" t="Include" />
           <e p="AlchemystPlayerController.cpp" t="Include" />
+          <e p="AlchLevelScriptActor.cpp" t="Include" />
           <e p="CraftingStation.cpp" t="Include" />
           <e p="FadeObjectsComponent.cpp" t="Include" />
           <e p="FoodItem.cpp" t="Include" />
           <e p="GAS" t="Include">
             <e p="AlchGameplayAbility.cpp" t="Include" />
+            <e p="AttributeSet" t="Include">
+              <e p="CharacterAttributes.cpp" t="Include" />
+            </e>
             <e p="Potions" t="Include">
+              <e p="GA_Potion_Consume.cpp" t="Include" />
               <e p="GA_Potion_Throw.cpp" t="Include" />
               <e p="Plant.cpp" t="Include" />
               <e p="Potion.cpp" t="Include" />
@@ -47,20 +147,27 @@
           <e p="Interactible.cpp" t="Include" />
           <e p="InventoryComponent.cpp" t="Include" />
           <e p="Item.cpp" t="Include" />
+          <e p="LootBox.cpp" t="Include" />
         </e>
         <e p="Public" t="Include">
+          <e p="A_Enemy.h" t="Include" />
           <e p="A_Gatherable.h" t="Include" />
           <e p="A_PlayerCharacter.h" t="Include" />
           <e p="Alchemyst.h" t="Include" />
           <e p="AlchemystCharacter.h" t="Include" />
           <e p="AlchemystGameMode.h" t="Include" />
           <e p="AlchemystPlayerController.h" t="Include" />
+          <e p="AlchLevelScriptActor.h" t="Include" />
           <e p="CraftingStation.h" t="Include" />
           <e p="FadeObjectsComponent.h" t="Include" />
           <e p="FoodItem.h" t="Include" />
           <e p="GAS" t="Include">
             <e p="AlchGameplayAbility.h" t="Include" />
+            <e p="AttributeSet" t="Include">
+              <e p="CharacterAttributes.h" t="Include" />
+            </e>
             <e p="Potions" t="Include">
+              <e p="GA_Potion_Consume.h" t="Include" />
               <e p="GA_Potion_Throw.h" t="Include" />
               <e p="Plant.h" t="Include" />
               <e p="Potion.h" t="Include" />
@@ -70,6 +177,7 @@
           <e p="Interactible.h" t="Include" />
           <e p="InventoryComponent.h" t="Include" />
           <e p="Item.h" t="Include" />
+          <e p="LootBox.h" t="Include" />
         </e>
       </e>
       <e p="Visualizers" t="Include" />
@@ -19794,6 +19902,56 @@
           <e p="ScreenshotTools.Build.cs" t="Include" />
         </e>
       </e>
+    </e>
+    <e p="E:\UE_4.25\Engine\Plugins\UnrealFastNoise" t="Include">
+      <e p="Resources" t="Include">
+        <e p="Icon128.png" t="Include" />
+      </e>
+      <e p="Source" t="Include">
+        <e p="UnrealFastNoisePlugin" t="Include">
+          <e p="Private" t="Include">
+            <e p="FastNoise" t="Include">
+              <e p="FastNoise.cpp" t="Include" />
+              <e p="LICENSE" t="Include" />
+              <e p="README.md" t="Include" />
+            </e>
+            <e p="UFN3SelectModule.cpp" t="Include" />
+            <e p="UFNAddModule.cpp" t="Include" />
+            <e p="UFNBlendModule.cpp" t="Include" />
+            <e p="UFNBlueprintFunctionLibrary.cpp" t="Include" />
+            <e p="UFNConstantModule.cpp" t="Include" />
+            <e p="UFNNoiseGenerator.cpp" t="Include" />
+            <e p="UFNRadialModule.cpp" t="Include" />
+            <e p="UFNScaleBiasModule.cpp" t="Include" />
+            <e p="UFNSelectModule.cpp" t="Include" />
+            <e p="UFNShoreFilterModule.cpp" t="Include" />
+            <e p="UFNSplineGenerator.cpp" t="Include" />
+            <e p="UFNWarpModule.cpp" t="Include" />
+            <e p="UnrealFastNoisePlugin.cpp" t="Include" />
+            <e p="UnrealFastNoisePluginPrivatePCH.h" t="Include" />
+          </e>
+          <e p="Public" t="Include">
+            <e p="FastNoise" t="Include">
+              <e p="FastNoise.h" t="Include" />
+            </e>
+            <e p="UFN3SelectModule.h" t="Include" />
+            <e p="UFNAddModule.h" t="Include" />
+            <e p="UFNBlendModule.h" t="Include" />
+            <e p="UFNBlueprintFunctionLibrary.h" t="Include" />
+            <e p="UFNConstantModule.h" t="Include" />
+            <e p="UFNNoiseGenerator.h" t="Include" />
+            <e p="UFNRadialModule.h" t="Include" />
+            <e p="UFNScaleBiasModule.h" t="Include" />
+            <e p="UFNSelectModule.h" t="Include" />
+            <e p="UFNShoreFilterModule.h" t="Include" />
+            <e p="UFNSplineGenerator.h" t="Include" />
+            <e p="UFNWarpModule.h" t="Include" />
+            <e p="UnrealFastNoisePlugin.h" t="Include" />
+          </e>
+          <e p="UnrealFastNoisePlugin.Build.cs" t="Include" />
+        </e>
+      </e>
+      <e p="UnrealFastNoisePlugin.uplugin" t="Include" />
     </e>
     <e p="E:\UE_4.25\Engine\Plugins\VirtualProduction\CompositePlane" t="Include">
       <e p="CompositePlane.uplugin" t="Include" />
