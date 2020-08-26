@@ -25,7 +25,10 @@ protected:
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
     TArray<class AInteractible*> ObjectsInRange;
 
-public:   
+    public:   
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Component")
+    class USceneComponent* WeaponPosition;
+    
     /** Top down camera */
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
     class UCameraComponent* TopDownCameraComponent;
@@ -85,4 +88,7 @@ public:
 
     UFUNCTION(BlueprintCallable)
     void SetDisableCursor(bool Value);
+
+    UFUNCTION(BlueprintCallable)
+    FTransform GetShootRotation();
 };

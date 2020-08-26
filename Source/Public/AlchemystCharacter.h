@@ -21,6 +21,9 @@ private:
     float DefaultSpeed;
 
 public:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Abilities)
+    TSubclassOf<class UAlchGameplayAbility> ProjectileAbility;
+    
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category= "Character")
     class UCharacterAttributes* Attributes;
     

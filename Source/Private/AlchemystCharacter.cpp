@@ -13,6 +13,7 @@
 #include "Engine/World.h"
 #include "AbilitySystemComponent.h"
 #include "Alchemyst.h"
+#include "AlchemystPlayerController.h"
 #include "GameplayAbilitySpec.h"
 #include "Abilities/GameplayAbilityTypes.h"
 #include "GAS/AlchGameplayAbility.h"
@@ -61,6 +62,10 @@ void AAlchemystCharacter::AddCharacterAbilities()
         //GetAbilityLevel(StartupAbility.GetDefaultObject()->AbilityID)
         AbilitySystemComponent->GiveAbility(
             FGameplayAbilitySpec(StartupAbility, 1, static_cast<int32>(EGDAbilityInputID::Test), this));
+
+        if(ProjectileAbility)
+            AbilitySystemComponent->GiveAbility(
+                FGameplayAbilitySpec(ProjectileAbility, 1, static_cast<int32>(EGDAbilityInputID::FireProjectile), this));
     }
 
     //AbilitySystemComponent->bCharacterAbilitiesGiven = true;

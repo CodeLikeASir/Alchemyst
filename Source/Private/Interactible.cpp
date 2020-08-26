@@ -18,6 +18,8 @@ AInteractible::AInteractible()
     InteractUI->SetDrawSize(FVector2D(200, 100));
     InteractUI->SetWidgetSpace(EWidgetSpace::Screen);
     InteractUI->SetVisibility(false);
+
+    InteractText = FText::FromString("Interact");
 }
 
 void AInteractible::ToggleInteractUI(bool bIsVisible)

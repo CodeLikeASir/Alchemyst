@@ -5,11 +5,9 @@
 #include "Runtime/Engine/Classes/Components/DecalComponent.h"
 #include "HeadMountedDisplayFunctionLibrary.h"
 #include "AlchemystCharacter.h"
-#include "Alchemyst.h"
 #include "A_PlayerCharacter.h"
-#include "Engine/CollisionProfile.h"
-#include "Engine/World.h"
 #include "AbilitySystemComponent.h"
+#include "Camera/CameraComponent.h"
 
 AAlchemystPlayerController::AAlchemystPlayerController()
 {
@@ -56,11 +54,14 @@ void AAlchemystPlayerController::SetupInputComponent()
     InputComponent->BindAxis("MoveUp", this, &AAlchemystPlayerController::MoveUp);
     InputComponent->BindAxis("MoveRight", this, &AAlchemystPlayerController::MoveRight);
 
+    InputComponent->BindAxis("Zoom", this, &AAlchemystPlayerController::ZoomChanged);
+
     UAbilitySystemComponent* AbilitySystem = MyCharacter->GetAbilitySystemComponent();
     if (AbilitySystem)
     {
         //AbilitySystem->BindAbilityActivationToInputComponent(InputComponent, FGameplayAbilityInputBinds("ConfirmInput", "CancelInput", "AbilityInput"));
     }
+    
     //MyCharacter->SetupInput(InputComponent);
 }
 
@@ -163,4 +164,15 @@ void AAlchemystPlayerController::AcknowledgePossession(APawn* P)
     {
         CharacterBase->GetAbilitySystemComponent()->InitAbilityActorInfo(CharacterBase, CharacterBase);
     }
+}
+
+void AAlchemystPlayerController::ZoomChanged(float Value)
+{
+    UCameraComponent* Camera = MyCharacter->GetTopDownCameraComponent();
+    float NewFoV = Camera->FieldOfView + Value * 1.f;
+    Camera->FieldOfView = FMath::Clamp(NewFoV, MinFoV, MaxFoV);
+}
+
+void AAlchemystPlayerController::FireProjectile()
+{
 }

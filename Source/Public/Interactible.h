@@ -23,6 +23,9 @@ protected:
     class USphereComponent* Trigger;
 
 public:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Interact")
+    FText InteractText;
+        
     virtual void ToggleInteractUI(bool bIsVisible);
 
     virtual void Interact(class AA_PlayerCharacter* InteractingPlayer);

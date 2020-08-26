@@ -17,6 +17,8 @@ ACraftingStation::ACraftingStation()
     Mesh->SetupAttachment(RootComponent);
 
     RootComponent->Mobility = EComponentMobility::Static;
+
+    InteractText = FText::FromString("Craft");
 }
 
 // Called when the game starts or when spawned

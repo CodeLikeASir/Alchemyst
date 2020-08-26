@@ -17,9 +17,9 @@ class ALCHEMYST_API ALootBox : public AInteractible
 
 public:
     ALootBox();
-    
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Inventory")
     class UInventoryComponent* InventoryComponent;
 
     void InitLoot(TArray<class UItem*> Items);
-    void OnItemsChanged();
 };

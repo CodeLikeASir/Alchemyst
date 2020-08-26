@@ -15,6 +15,7 @@
 #include "GAS/Potions/Potion.h"
 #include "GAS/Potions/GA_Potion_Consume.h"
 #include "GAS/Potions/GA_Potion_Throw.h"
+#include "AlchemystPlayerController.h"
 
 AA_PlayerCharacter::AA_PlayerCharacter()
 {
@@ -58,6 +59,9 @@ AA_PlayerCharacter::AA_PlayerCharacter()
 
     ThrowPosition = CreateDefaultSubobject<USphereComponent>(TEXT("ThrowPosition"));
     ThrowPosition->SetupAttachment(RootComponent);
+
+    WeaponPosition = CreateDefaultSubobject<USphereComponent>(TEXT("WeaponPosition"));
+    WeaponPosition->SetupAttachment(RootComponent);
 }
 
 void AA_PlayerCharacter::Tick(float DeltaSeconds)
@@ -188,4 +192,25 @@ void AA_PlayerCharacter::SetDisableCursor(bool Value)
 {
     bDisableCursor = Value;
     CursorToWorld->SetVisibility(!Value);
+}
+
+FTransform AA_PlayerCharacter::GetShootRotation()
+{
+    AAlchemystPlayerController* OwningPlayerController = Cast<AAlchemystPlayerController>(GetOwner());
+    FVector CursorHitPos = OwningPlayerController->GetCursorHitPos();
+    FVector ThrowPos = GetThrowPos();
+    FVector ShootNormal = CursorHitPos - ThrowPos;
+
+    // Rotate player in throw direction
+    FRotator NewRotation = UKismetMathLibrary::FindLookAtRotation(GetActorLocation(),
+                                                                  CursorHitPos);
+    SetActorRotation(FRotator(
+        GetControlRotation().Pitch,
+        NewRotation.Yaw,
+        GetControlRotation().Roll));
+
+    FRotator SpawnRotation = ShootNormal.Rotation();
+    //SpawnRotation.Pitch += 45.f;
+    
+    return FTransform(SpawnRotation, ThrowPos);
 }

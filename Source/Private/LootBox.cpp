@@ -7,17 +7,12 @@
 
 ALootBox::ALootBox()
 {
+    InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("Inventory"));
+    
+    InteractText = FText::FromString("Loot");
 }
 
 void ALootBox::InitLoot(TArray<class UItem*> Items)
 {
-    //InventoryComponent->InitItems(Items);
-}
-
-void ALootBox::OnItemsChanged()
-{
-    if(InventoryComponent->IsEmpty())
-    {
-        Destroy();
-    }
+    InventoryComponent->InitItems(Items);
 }

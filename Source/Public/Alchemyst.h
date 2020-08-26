@@ -20,5 +20,7 @@ enum class EGDAbilityInputID : uint8
     // 5 Q
     Throw UMETA(DisplayName = "Throw"),
     // 6 T
-    Test UMETA(DisplayName = "Test")
+    Test UMETA(DisplayName = "Test"),
+    // 7 SpaceBar
+    FireProjectile UMETA(DisplayName = "FireProjectile")
 };

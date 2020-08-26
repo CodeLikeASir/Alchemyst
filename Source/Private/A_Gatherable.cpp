@@ -18,6 +18,8 @@ AA_Gatherable::AA_Gatherable()
     Trigger->SetupAttachment(RootComponent);
 
     UsesLeft = 1;
+
+    InteractText = FText::FromString("Collect");
 }
 
 // Called when the game starts or when spawned

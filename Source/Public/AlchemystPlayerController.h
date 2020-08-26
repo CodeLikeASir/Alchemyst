@@ -45,4 +45,14 @@ protected:
     void OnClicked();
 
     virtual void AcknowledgePossession(APawn* P) override;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Camera")
+    float MaxFoV = 120.f;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Camera")
+    float MinFoV = 60.f;
+    
+    void ZoomChanged(float Value);
+
+    void FireProjectile();
 };

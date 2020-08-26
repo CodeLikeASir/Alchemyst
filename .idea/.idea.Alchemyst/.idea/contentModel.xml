@@ -123,6 +123,7 @@
           <e p="A_Enemy.cpp" t="Include" />
           <e p="A_Gatherable.cpp" t="Include" />
           <e p="A_PlayerCharacter.cpp" t="Include" />
+          <e p="Alch_RangedWeapon.cpp" t="Include" />
           <e p="Alchemyst.cpp" t="Include" />
           <e p="AlchemystCharacter.cpp" t="Include" />
           <e p="AlchemystGameMode.cpp" t="Include" />
@@ -136,6 +137,7 @@
             <e p="AttributeSet" t="Include">
               <e p="CharacterAttributes.cpp" t="Include" />
             </e>
+            <e p="GA_RangedAttack.cpp" t="Include" />
             <e p="Potions" t="Include">
               <e p="GA_Potion_Consume.cpp" t="Include" />
               <e p="GA_Potion_Throw.cpp" t="Include" />
@@ -148,11 +150,13 @@
           <e p="InventoryComponent.cpp" t="Include" />
           <e p="Item.cpp" t="Include" />
           <e p="LootBox.cpp" t="Include" />
+          <e p="WeaponItem.cpp" t="Include" />
         </e>
         <e p="Public" t="Include">
           <e p="A_Enemy.h" t="Include" />
           <e p="A_Gatherable.h" t="Include" />
           <e p="A_PlayerCharacter.h" t="Include" />
+          <e p="Alch_RangedWeapon.h" t="Include" />
           <e p="Alchemyst.h" t="Include" />
           <e p="AlchemystCharacter.h" t="Include" />
           <e p="AlchemystGameMode.h" t="Include" />
@@ -166,6 +170,7 @@
             <e p="AttributeSet" t="Include">
               <e p="CharacterAttributes.h" t="Include" />
             </e>
+            <e p="GA_RangedAttack.h" t="Include" />
             <e p="Potions" t="Include">
               <e p="GA_Potion_Consume.h" t="Include" />
               <e p="GA_Potion_Throw.h" t="Include" />
@@ -178,6 +183,7 @@
           <e p="InventoryComponent.h" t="Include" />
           <e p="Item.h" t="Include" />
           <e p="LootBox.h" t="Include" />
+          <e p="WeaponItem.h" t="Include" />
         </e>
       </e>
       <e p="Visualizers" t="Include" />

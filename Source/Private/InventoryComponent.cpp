@@ -57,7 +57,7 @@ bool UInventoryComponent::RemoveItem(UItem* Item)
         Items.RemoveSingle(Item);
         OnInventoryUpdated.Broadcast();
 
-        if (OwningPlayer->EquippedItem == Item)
+        if (OwningPlayer && OwningPlayer->EquippedItem == Item)
         {
             OwningPlayer->EquippedItem = nullptr;
         }
